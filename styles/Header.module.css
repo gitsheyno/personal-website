@@ -1,0 +1,43 @@
+/* components/HomeHeader.module.css */
+
+.headerContainer {
+    border: 1px solid red;
+    width: 100vw;
+    height: 50vh;
+    /* background-color: #f9f9f9; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .header {
+    text-align: center;
+  }
+  
+  .title {
+    font-family: 'Arial, sans-serif';
+    font-size: 3rem;
+    color: #333;
+  }
+  
+  .subtitle {
+    font-family: 'Arial, sans-serif';
+    font-size: 1.5rem;
+    color: #f7a440;
+  }
+  
+  .experience {
+    font-family: 'Arial, sans-serif';
+    font-size: 1.2rem;
+    color: #333;
+    margin: 1rem 0;
+  }
+  
+  .description {
+    font-family: 'Arial, sans-serif';
+    font-size: 1rem;
+    color: #666;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
