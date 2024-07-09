@@ -1,4 +1,3 @@
-
 import styles from "../styles/LandingPage.module.css";
 
 const WorkExperience = () => {

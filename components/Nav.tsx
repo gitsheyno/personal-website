@@ -1,4 +1,5 @@
 // components/NavBar.tsx
+import HamburgerMenu from "./HamburgerMenu";
 import { IoCall } from "react-icons/io5";
 
 import styles from "../styles/Nav.module.css";
@@ -10,11 +11,6 @@ const NavBar = () => {
         <div className={styles.logo}>
           <a
             href="#nav"
-            style={{
-              fontFamily: "fantasy",
-              fontSize: "2rem",
-              fontStyle: "italic",
-            }}
           >
             Shayan
           </a>
@@ -33,11 +29,14 @@ const NavBar = () => {
             <a href="#contact">Contact</a>
           </li>
         </ul>
+        <div className={styles.rightIcon}>
         <div className={styles.call}>
           <a href="#">+4017621701815</a> |
           <div>
             <IoCall />
           </div>
+      </div>
+      <HamburgerMenu/>
         </div>
       </div>
     </nav>

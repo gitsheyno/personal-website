@@ -14,6 +14,8 @@ export default function RootLayout({
     <html lang="en" className={nunito.className}>
       <head>
         <title>Shayan Heidary Portfolio</title>
+        <link rel="icon" href="/icon.ico" sizes="any" />
+
       </head>
       <body>{children}</body>
     </html>

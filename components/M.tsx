@@ -4,7 +4,7 @@ import Image from "next/image";
 import NavBar from "./Nav";
 import { FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
-import image from "../public/shayan1.png";
+import image from "../public/shayan5.png";
 export default function M() {
   return (
     <div className={styles.container}>
@@ -13,7 +13,7 @@ export default function M() {
         <main id="nav" className={styles.main}>
           <section className={styles.heroSection}>
             <section className={styles.profile}>
-              {/* <Image className={styles.img} src={image} alt="profile-pic" width={300} height={100}/> */}
+              <Image  priority={true} className={styles.img} src={image} alt="profile-pic" />
             </section>
             <section>
               <h1 className={styles.title}>
