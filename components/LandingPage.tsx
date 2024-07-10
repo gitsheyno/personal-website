@@ -3,6 +3,7 @@ import styles from "../styles/LandingPage.module.css";
 const WorkExperience = () => {
   return (
     <div id="experiences" className={styles.container}>
+      <section>
       <h1 className={styles.title}>My Work Experience</h1>
       <div className={styles.timeline}>
         <div className={styles.entry}>
@@ -106,6 +107,7 @@ const WorkExperience = () => {
           </div>
         </div>
       </div>
+      </section>
     </div>
   );
 };

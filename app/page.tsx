@@ -10,9 +10,8 @@ export default function Home() {
     <div>
       <M />
       <LandingPage />
-      {/* <Experience /> */}
-      {/* <Portfolio /> */}
-      {/* <Contact /> */}
+      <Portfolio />
+      <Contact />
     </div>
   );
 }

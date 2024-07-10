@@ -1,41 +1,145 @@
-.portfolio {
-    padding: 50px 20px;
-    background: #1e1e1e;
-    color: #fff;
-    text-align: center;
-  }
+.container {
+  max-width: 100%;
+  /* height: 80vh; */
+  margin: 0 auto;
+  padding: 2rem;
+  padding-top: 6rem;
+  background-color:rgba(255, 228, 196, 0.511);
+
+}
+.info{
+  text-align: center;
+}
+
+.info h3{
+  font-size: 2.5rem;
   
-  .portfolio h2 {
-    font-size: 2.5rem;
-    margin-bottom: 40px;
+}
+
+.container section p{
+  margin-bottom: 2rem;
+}
+
+.container section{
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.container section .cards{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-template-rows: 250px;
+  gap: 1rem;
+}
+
+.container section .cards .card a{
+  position: absolute;
+  left: 0.5rem;
+  top: 0.5rem;
+  display: block;
+  background-color: rgba(0, 0, 0, 0.354);
+  padding: 0.1rem 1rem;
+  font-size: 0.6rem;
+  border-radius: 5px;
+  z-index: 1000;
+}
+
+.cards .card{
+
+  position: relative;
+
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  object-fit: cover;
+  aspect-ratio: 3/2;
+  border-radius: 10px;
+  overflow: hidden;
+  max-width: 300px;
+
+}
+
+.cards .card:first-child div{
+
+}
+
+
+.cards .card:first-child {
+  background-color: rgba(187, 255, 0, 0.289);
+
+}
+
+.cards .card:first-child div{
+  background: url("/knime2.png");
+  -webkit-transform: rotate(-15deg);
+
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  object-fit: cover;
+  aspect-ratio: 3/2;
+  color: black;
+  font-weight: 700;
+
+}
+
+.cards .card:nth-child(2){
+  background-color: rgba(0, 255, 255, 0.289);
+}
+
+.cards .card:nth-child(2) div{
+  background: url("/wagon.png");
+  background-position: center;
+  background-size: contain;
+  -webkit-transform: rotate(-15deg);
+  background-repeat: no-repeat;
+  object-fit: cover;
+  aspect-ratio: 3/2;
+  color: black;
+  font-weight: 700;
+}
+
+.cards .card:nth-child(3){
+  background-color: rgba(255, 0, 0, 0.289);
+}
+
+.cards .card:nth-child(3) div{
+  background: url("/caleries.png");
+  background-position: center;
+  background-size: contain;
+  -webkit-transform: rotate(-15deg);
+  background-repeat: no-repeat;
+  object-fit: cover;
+  aspect-ratio: 3/2;
+  color: black;
+  font-weight: 700;
+}
+
+@media (max-width:1000px){
+
+  .container section{
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
   }
-  
-  .projectGrid {
+  .container section .cards{
+    width: 60%;
+
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
+    grid-template-columns: 1fr;
+    /* grid-template-rows: 250px; */
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
   }
-  
-  .project {
-    background: #2a2a2a;
-    padding: 20px;
-    border-radius: 8px;
-    transition: transform 0.3s ease;
-  }
-  
-  .project:hover {
-    transform: scale(1.05);
-  }
-  
-  .project img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    margin-bottom: 10px;
-  }
-  
-  .project h3 {
-    font-size: 1.25rem;
-    margin-top: 10px;
-  }
-  
+
+
+.cards .card:first-child  {
+  background-color: rgba(187, 255, 0, 0.289);
+  /* grid-column: 1/-1; */
+}
+
+}

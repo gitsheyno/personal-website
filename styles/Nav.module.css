@@ -19,10 +19,10 @@
     justify-content: space-between;
   }
 .call a{
-    font-size: 1.2rem;
+    font-size: 1rem;
 }
   .call div{
-    font-size: 1.2rem;
+    font-size: 1rem;
     border: 1px solid black;
     border-radius: 100%;
     padding: 0.3rem;
@@ -52,7 +52,7 @@
   .navItem {
     /* margin: 0 1rem; */
     font-family: 'Arial, sans-serif';
-    font-size: 1.2rem;
+    font-size: 1rem;
     border: 1px solid transparent;
     cursor: pointer;
     padding: 0.4rem 2rem;
@@ -69,6 +69,11 @@
     display: flex;
     align-items: center;
     gap: 0.5rem;
+  }
+  .logo a{
+    font-family: fantasy;
+    font-size: 2rem;
+    font-style: "italic",
   }
 
   @media (max-width:1200px){
