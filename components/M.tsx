@@ -1,4 +1,4 @@
-'use client'
+"use client"
 
 import styles from "../styles/Home.module.css";
 import SkillsTabs from "./Skills";
@@ -21,7 +21,7 @@ export default function M() {
               <h1 className={styles.title}>
                 Hey There
                 <br />
-                I'm Shayan
+                I&apos;m Shayan
               </h1>
               <p className={styles.subtitle}>Express.Js Lover</p>
             </section>

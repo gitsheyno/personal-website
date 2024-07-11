@@ -86,7 +86,7 @@ const WorkExperience = () => {
                 efficiency.
               </li>
               <li>
-                Optimized data visualizations using D3.js, enhancing the charts'
+                Optimized data visualizations using D3.js, enhancing the charts&apos;
                 performance by 10%.
               </li>
               <li>
