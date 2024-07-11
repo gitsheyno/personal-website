@@ -19,17 +19,17 @@ const ContactForm: React.FC = () => {
           <div className={styles.formRow}>
             <div className={styles.formGroup}>
               <label htmlFor="fullName">Full Name</label>
-              <input type="text" id="fullName" name="fullName" />
+              <input type="text" id="fullName" name="fullName"required />
             </div>
             <div className={styles.formGroup}>
               <label htmlFor="company">Company</label>
-              <input type="text" id="company" name="company" />
+              <input type="text" id="company" name="company" required/>
             </div>
           </div>
           <div className={styles.formRow}>
             <div className={styles.formGroup}>
               <label htmlFor="email">Email</label>
-              <input type="email" id="email" name="email" />
+              <input type="email" id="email" name="email" required/>
             </div>
             <div className={styles.formGroup}>
               <label htmlFor="phoneNumber">Phone Number</label>
@@ -39,7 +39,7 @@ const ContactForm: React.FC = () => {
       
           <div className={styles.formGroup}>
             <label htmlFor="message">Your Message</label>
-            <textarea className={styles.textarea} id="message" name="message"></textarea>
+            <textarea className={styles.textarea} id="message" name="message" required></textarea>
           </div>
           <button className={styles.button} type="submit">Send Message</button>
         </form>
