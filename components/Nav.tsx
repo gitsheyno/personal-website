@@ -30,7 +30,7 @@ const NavBar = () => {
         </ul>
         <div className={styles.rightIcon}>
         <div className={styles.call}>
-          <a href="#">+4017621701815</a> |
+          <a href="facetime:14085551234">+4017621701815</a> |
           <div>
             <IoCall />
           </div>
