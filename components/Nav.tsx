@@ -8,11 +8,7 @@ const NavBar = () => {
     <nav className={styles.navBar}>
       <div className={styles.nav}>
         <div className={styles.logo}>
-          <a
-            href="#nav"
-          >
-            Shayan
-          </a>
+          <a href="#nav">Shayan</a>
         </div>
         <ul className={styles.navList}>
           <li className={styles.navItem}>
@@ -29,15 +25,15 @@ const NavBar = () => {
           </li>
         </ul>
         <div className={styles.rightIcon}>
-        <div className={styles.call}>
-          <a href="#">+4017621701815</a> |
-          <div>
-            <a href="facetime:+4917621701815">
-            <IoCall />
-            </a>
+          <div className={styles.call}>
+            <a href="#">+4017621701815</a> |
+            <div>
+              <a href="facetime:+4917621701815">
+                <IoCall />
+              </a>
+            </div>
           </div>
-      </div>
-      <HamburgerMenu/>
+          <HamburgerMenu />
         </div>
       </div>
     </nav>

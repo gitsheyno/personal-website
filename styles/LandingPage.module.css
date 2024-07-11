@@ -89,6 +89,13 @@
 
 @media(max-width : 1200px){
  .container section{
-    max-width: 80%;
+    max-width: 100%;
+  }
+  .title{
+    font-size: 1.7rem;
+  }
+
+  .content h2 {
+    font-size: 1.2rem;
   }
 }

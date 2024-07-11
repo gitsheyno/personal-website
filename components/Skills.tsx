@@ -43,7 +43,7 @@ const skillsData = [
       SiReactquery,
     ],
     src: [CiMonitor],
-    bg:"red"
+    bg: "red",
   },
   {
     category: "Backend Skills",
@@ -51,7 +51,7 @@ const skillsData = [
       "On the backend, I specialize in TypeScript, Express.js, Postgres, and MongoDB. With a deep understanding of server-side architecture, I craft robust APIs and scalable solutions that power dynamic web experiences.Backend Expertise: Leveraging the power of TypeScript, I ensure the integrity and reliability of your codebase, providing a solid foundation for your applications. Using Express.js, I build efficient and secure APIs that facilitate seamless communication between the frontend and backend. Whether it's harnessing the power of Postgres for relational data or structuring documents with MongoDB, I bring a comprehensive skill set to manage your data effectively. Additionally, I implement both GraphQL and REST API to provide flexible and efficient data retrieval methods.Contact me today to discuss how we can seamlessly integrate your frontend and backend for a cohesive and exceptional user experience.",
     skills: [SiExpress, SiPostgresql, DiMongodb, DiNodejs, FaDatabase, SiRedux],
     src: [CiServer],
-    bg:"green"
+    bg: "green",
   },
   {
     category: "Testing Expertise",
@@ -59,7 +59,7 @@ const skillsData = [
       "I bring a wealth of expertise in ensuring the reliability and functionality of your applications. My proficiency spans a variety of tools, with a particular focus on Cypress, where I lead a team in delivering high-quality end-to-end testing solutions. From robust API testing using Postman to intricate unit testing with IntelliJ, I employ a comprehensive testing strategy to fortify your codebase.Testing Leadership and Innovation: Guiding a dedicated team, I leverage Cypress to conduct thorough end-to-end testing, ensuring your applications perform seamlessly across diverse scenarios. Postman is my go-to for meticulous API testing, guaranteeing that your backend systems are as reliable as your frontend. In the world of unit testing, I utilize the power of IntelliJ to meticulously examine and validate individual components. As a trailblazer in testing, I'm also at the forefront of the evolving landscape with Vitest. Together, let's ensure your applications not only meet but exceed the highest standards of quality. Connect with me to explore how we can elevate your testing processes and deliver flawless user experiences.",
     skills: [SiVitest, SiCypress, SiPostman],
     src: [GrTest],
-    bg:"orange"
+    bg: "orange",
   },
 ];
 
@@ -79,9 +79,12 @@ const SkillsTabs = () => {
               }`}
               onClick={() => setActiveTab(index)}
             >
-              <div  style={{backgroundColor:`${tab.bg}`}} className={styles.buttonIcon}>
-                {skillsData[index].src?.map((Item ,index) => (
-                  <Item key={index}/>
+              <div
+                style={{ backgroundColor: `${tab.bg}` }}
+                className={styles.buttonIcon}
+              >
+                {skillsData[index].src?.map((Item, index) => (
+                  <Item key={index} />
                 ))}
               </div>
               {tab.category}
@@ -91,15 +94,15 @@ const SkillsTabs = () => {
         <div className={styles.content}>
           <div className={styles.contentBox}>
             <p>{skillsData[activeTab].description}</p>
-                <div className={styles.icons}>
+            <div className={styles.icons}>
               {skillsData[activeTab].skills?.map((Item, index) => (
-                           <object key={index} className={styles.icons}>
-                <div className={styles.icon}>
-                  <Item key={index} />
-                </div>
-                         </object>
+                <object key={index} className={styles.icons}>
+                  <div className={styles.icon}>
+                    <Item key={index} />
+                  </div>
+                </object>
               ))}
-   </div>
+            </div>
           </div>
         </div>
       </div>

@@ -73,15 +73,15 @@ border: 1px solid red;
 .content {
   flex: 1;
   min-width: 60%; 
+  height: 500px;
+
+
 }
 
 .contentBox {
-  /* background-color: #fff; */
   text-align: left;
   padding: 0rem 0;
   border-radius: 8px;
-  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
-  /* overflow-y: auto; Handle overflow if content is too long */
   animation: fadeIn 0.5s ease-in-out;
 }
 
@@ -122,7 +122,7 @@ border: 1px solid red;
 
 @media (max-width:800px){
 .skillsContainer {
-max-width: 80%;
+max-width: 100%;
 }
 .tabsContainer{
   flex-direction: column;

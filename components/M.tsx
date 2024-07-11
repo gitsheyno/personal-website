@@ -1,5 +1,5 @@
-"use client"
-
+"use client";
+import VerticalSlider from "./Carousel";
 import styles from "../styles/Home.module.css";
 import SkillsTabs from "./Skills";
 import Image from "next/image";
@@ -7,6 +7,7 @@ import NavBar from "./Nav";
 import { FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import image from "../public/shayan5.png";
+import Link from "next/link";
 export default function M() {
   return (
     <div className={styles.container}>
@@ -15,7 +16,12 @@ export default function M() {
         <main id="nav" className={styles.main}>
           <section className={styles.heroSection}>
             <section className={styles.profile}>
-              <Image  priority={true} className={styles.img} src={image} alt="profile-pic" />
+              <Image
+                priority={true}
+                className={styles.img}
+                src={image}
+                alt="profile-pic"
+              />
             </section>
             <section>
               <h1 className={styles.title}>
@@ -23,7 +29,16 @@ export default function M() {
                 <br />
                 I&apos;m Shayan
               </h1>
-              <p className={styles.subtitle}>Express.Js Lover</p>
+
+              <p className={styles.subtitle}>
+                <VerticalSlider
+                  slides={[
+                    "Frontend Engineer",
+                    "FullStack Developer",
+                    "Problem Solver",
+                  ]}
+                />
+              </p>
             </section>
             <section>
               <h1 className={styles.info}>
@@ -33,7 +48,7 @@ export default function M() {
             </section>
             <section>
               <div className={styles.experience}>
-                <p>3</p>
+                <p style={{ color: "green" }}>3</p>
                 <p>
                   YEARS
                   <br />
@@ -44,10 +59,14 @@ export default function M() {
             <section>
               <div className={styles.social}>
                 <div>
-                  <FaGithub />
+                  <Link href="https://github.com/gitsheyno">
+                    <FaGithub />
+                  </Link>
                 </div>
                 <div>
-                  <FaLinkedin />
+                  <Link href="https://de.linkedin.com/in/shayan-heidary">
+                    <FaLinkedin />
+                  </Link>
                 </div>
               </div>
             </section>
