@@ -1,6 +1,7 @@
+'use client'
 import React from 'react';
 import styles from '../styles/Contact.module.css';
-
+import { sendEmail } from '@/actions/email';
 const ContactForm: React.FC = () => {
   return (
     <div className={styles.contactContainer}>
@@ -14,7 +15,7 @@ const ContactForm: React.FC = () => {
       </div>
       <div className={styles.contactForm}>
         <h2>We’d love to hear from you! Let’s get in touch</h2>
-        <form>
+        <form action={sendEmail}>
           <div className={styles.formRow}>
             <div className={styles.formGroup}>
               <label htmlFor="fullName">Full Name</label>

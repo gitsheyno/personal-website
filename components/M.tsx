@@ -1,3 +1,5 @@
+'use client'
+
 import styles from "../styles/Home.module.css";
 import SkillsTabs from "./Skills";
 import Image from "next/image";

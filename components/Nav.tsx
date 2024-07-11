@@ -36,7 +36,7 @@ const NavBar = () => {
             <IoCall />
           </div>
       </div>
-      <HamburgerMenu/>
+      {/* <HamburgerMenu/> */}
         </div>
       </div>
     </nav>
