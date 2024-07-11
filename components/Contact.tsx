@@ -4,17 +4,17 @@ import styles from '../styles/Contact.module.css';
 import { sendEmail } from '@/actions/email';
 const ContactForm: React.FC = () => {
   return (
-    <div className={styles.contactContainer}>
+    <div id='contacts' className={styles.contactContainer}>
       <div className={styles.contactInfo}>
-        <h2>Contact Us</h2>
-        <p>Not sure what you need? The team at Square Events will be happy to listen to you and suggest event ideas you hadn't considered</p>
+        <h2>Contact Me</h2>
+        <p>Not sure what you need? I will be happy to listen to you and suggest event ideas you hadn't considered</p>
         <div className={styles.contactDetails}>
-          <p><span className={styles.icon}>✉️</span> info@squareevents.com</p>
-          <p><span className={styles.icon}>📞</span> Support: (+21) 123 456 586</p>
+          <p><span className={styles.icon}>✉️</span> hdrydeveloper@gmail.com</p>
+          <p><span className={styles.icon}>📞</span> Support: (+49) 17621701815</p>
         </div>
       </div>
       <div className={styles.contactForm}>
-        <h2>We’d love to hear from you! Let’s get in touch</h2>
+        <h2>I’d love to hear from you! Let’s get in touch</h2>
         <form action={sendEmail}>
           <div className={styles.formRow}>
             <div className={styles.formGroup}>

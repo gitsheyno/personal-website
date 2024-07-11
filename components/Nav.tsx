@@ -1,4 +1,3 @@
-// components/NavBar.tsx
 import HamburgerMenu from "./HamburgerMenu";
 import { IoCall } from "react-icons/io5";
 
@@ -26,7 +25,7 @@ const NavBar = () => {
             <a href="#work">Works</a>
           </li>
           <li className={styles.navItem}>
-            <a href="#contact">Contact</a>
+            <a href="#contacts">Contact</a>
           </li>
         </ul>
         <div className={styles.rightIcon}>
@@ -36,7 +35,7 @@ const NavBar = () => {
             <IoCall />
           </div>
       </div>
-      {/* <HamburgerMenu/> */}
+      <HamburgerMenu/>
         </div>
       </div>
     </nav>
