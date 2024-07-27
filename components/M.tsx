@@ -30,7 +30,7 @@ export default function M() {
                 I&apos;m Shayan
               </h1>
 
-              <p className={styles.subtitle}>
+              <div className={styles.subtitle}>
                 <VerticalSlider
                   slides={[
                     "Frontend Engineer",
@@ -38,7 +38,7 @@ export default function M() {
                     "Problem Solver",
                   ]}
                 />
-              </p>
+              </div>
             </section>
             <section>
               <h1 className={styles.info}>

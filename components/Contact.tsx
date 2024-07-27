@@ -15,7 +15,7 @@ const ContactForm: React.FC = () => {
           <p>
             <span className={styles.icon}>✉️</span> hdrydeveloper@gmail.com
           </p>
-          <p style={{marginBottom:"1rem"}}>
+          <p style={{ marginBottom: "1rem" }}>
             <span className={styles.icon}>📞</span> Support: (+49) 17621701815
           </p>
         </div>

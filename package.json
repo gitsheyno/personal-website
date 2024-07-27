@@ -12,15 +12,19 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@emotion/react": "^11.11.4",
-    "@emotion/styled": "^11.11.5",
+    "@emotion/react": "^11.13.0",
+    "@emotion/styled": "^11.13.0",
     "@lottiefiles/dotlottie-react": "^0.7.2",
-    "@mui/material": "^5.16.0",
+    "@mui/icons-material": "^5.16.5",
+    "@mui/material": "^5.16.5",
     "@react-email/components": "^0.0.21",
+    "@types/react-swipeable-views-utils": "^0.13.7",
     "next": "14.2.4",
     "react": "^18",
     "react-dom": "^18",
     "react-icons": "^5.2.1",
+    "react-multi-carousel": "^2.8.5",
+    "react-swipeable-views-react-18-fix": "^0.14.1",
     "resend": "^3.4.0"
   },
   "devDependencies": {
