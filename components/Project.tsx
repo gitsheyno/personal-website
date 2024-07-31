@@ -4,6 +4,7 @@ import wagon from "../public/wagon.png";
 import calories from "../public/caleries.png";
 import knime from "../public/knime2.png";
 import chatbot from "../public/chatbot.png";
+import events from "../public/events.png"
 import React from "react";
 import {
   Button,
@@ -215,6 +216,37 @@ export default function Project() {
         <CardActions>
           <Button size="small">
             <Link href="https://chatbot-lovat-sigma.vercel.app/">Visit</Link>
+          </Button>
+        </CardActions>
+      </Card>
+      <Card
+        sx={{
+          maxWidth: 345,
+          margin: "0 1rem",
+          height: "400px",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "space-between",
+        }}
+      >
+        <Image
+          style={{ backgroundColor: "silver", aspectRatio: "3/2" }}
+          src={events}
+          alt=""
+          width={450}
+          height={200}
+        />
+        <CardContent sx={{ paddingBottom: 0, height: "200px" }}>
+          <Typography gutterBottom variant="h5" component="div">
+          EventGalore
+          </Typography>
+          <Typography variant="body2" color="text.secondary">
+          effortlessly organize your events with a touch of flair and precision, making every gathering a grand affair.
+          </Typography>
+        </CardContent>
+        <CardActions>
+          <Button size="small">
+            <Link href="https://events-eta-mauve.vercel.app/">Visit</Link>
           </Button>
         </CardActions>
       </Card>
