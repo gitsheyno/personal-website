@@ -4,7 +4,9 @@ import wagon from "../public/wagon.png";
 import calories from "../public/caleries.png";
 import knime from "../public/knime2.png";
 import chatbot from "../public/chatbot.png";
-import events from "../public/events.png"
+import events from "../public/events.png";
+import { FaCode } from "react-icons/fa";
+import { CgWebsite } from "react-icons/cg";
 import React from "react";
 import {
   Button,
@@ -16,6 +18,69 @@ import {
 } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
+
+interface Portfolio {
+  image: string;
+  description: {
+    name: string;
+    title: string;
+  };
+  link: string[];
+}
+
+
+const portfolioData : Portfolio[] = [
+  {
+    image:"/knime2.png",
+    description:{
+      name:"KNIME",
+      title:"open-source analytics platform"
+    },
+    link:[
+      "https://www.knime.com/downloads","https://github.com/orgs/knime/repositories"
+    ]
+  },
+  {
+    image:"/events.png",
+    description:{
+      name:"EventGalore",
+      title:"effortlessly organize your events with a touch of flair and precision, making every gathering a grand affair."
+    },
+    link:[
+      "https://events-eta-mauve.vercel.app/signin","https://github.com/gitsheyno/rsvp"
+    ]
+  },
+  {
+    image:"/chatbot.png",
+    description:{
+      name:"Minimal ChatBot",
+      title:"Chat with AI and upload files with your prompts for seamless interactions."
+    },
+    link:[
+      "https://chatbot-lovat-sigma.vercel.app/","https://github.com/gitsheyno/chatbot"
+    ]
+  },
+  {
+    image:"/wagon.png",
+    description:{
+      name:"Wagon",
+      title:"Discover the fastest and most convenient train connections, saving you valuable time effortlessly."
+    },
+    link:[
+      "https://app.wagondash.com/login","https://app.wagondash.com/login"
+    ]
+  },
+  {
+    image:"/learnly.png",
+    description:{
+      name:"Learnly",
+      title:"effortlessly find your tutor, Or become a tutor."
+    },
+    link:[
+      "https://learnly-iota.vercel.app/","https://github.com/gitsheyno/Learnly"
+    ]
+  },
+]
 export default function Project() {
   return (
     <Carousel
@@ -72,184 +137,47 @@ export default function Project() {
       slidesToSlide={1}
       swipeable
     >
-      {/* <Card sx={{ maxWidth: 345 , margin:"0 1rem" }}>
-      <CardMedia
-         sx={{ height: 200 }}
-        image="https://images.unsplash.com/photo-1549989476-69a92fa57c36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
-        title="green iguana"
-      />
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
-          Lizard
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-          Lizards are a widespread group of squamate reptiles, with over 6,000
-          species, ranging across all continents except Antarctica
-        </Typography>
-      </CardContent>
-      <CardActions>
-        <Button size="small">Share</Button>
-        <Button size="small">Learn More</Button>
-      </CardActions>
-    </Card> */}
-      <Card
-        sx={{
-          maxWidth: 345,
-          margin: "0 1rem",
-          height: "400px",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "space-between",
-        }}
-      >
-        <Image
-          style={{ backgroundColor: "silver", aspectRatio: "3/2" }}
-          src={wagon}
-          alt=""
-          width={350}
-          height={200}
-        />
-        <CardContent sx={{ paddingBottom: 0 }}>
-          <Typography gutterBottom variant="h5" component="div">
-            Wagon
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            Discover the fastest and most convenient train connections, saving
-            you valuable time effortlessly.
-          </Typography>
-        </CardContent>
-        <CardActions>
-          <Button size="small">
-            <Link href="https://app.wagondash.com/login">Visit</Link>
-          </Button>
-        </CardActions>
-      </Card>
-      <Card
-        sx={{
-          maxWidth: 345,
-          margin: "0 1rem",
-          height: "400px",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "space-between",
-        }}
-      >
-        <Image
-          style={{ backgroundColor: "silver", aspectRatio: "3/2" }}
-          src={knime}
-          alt=""
-          width={350}
-          height={200}
-        />
-        <CardContent sx={{ paddingBottom: 0, height: "200px" }}>
-          <Typography gutterBottom variant="h5" component="div">
-            KNIME
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            open-source analytics platform
-          </Typography>
-        </CardContent>
-        <CardActions>
-          <Button size="small">
-            <Link href="https://www.knime.com/downloads">Visit</Link>
-          </Button>
-        </CardActions>
-      </Card>
-      <Card
-        sx={{
-          maxWidth: 345,
-          margin: "0 1rem",
-          height: "400px",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "space-between",
-        }}
-      >
-        <Image
-          style={{ backgroundColor: "silver", aspectRatio: "3/2" }}
-          src={calories}
-          alt=""
-          width={450}
-          height={200}
-        />
-        <CardContent sx={{ paddingBottom: 0, height: "200px" }}>
-          <Typography gutterBottom variant="h5" component="div">
-            Low-Carb-Diet
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            Find the best recipes, tailored diet plans, and track your calories
-            with visualizations to achieve your goals effortlessly.
-          </Typography>
-        </CardContent>
-        <CardActions>
-          <Button size="small">
-            <Link href="https://low-carb-diet-tan.vercel.app/">Visit</Link>
-          </Button>
-        </CardActions>
-      </Card>
-      <Card
-        sx={{
-          maxWidth: 345,
-          margin: "0 1rem",
-          height: "400px",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "space-between",
-        }}
-      >
-        <Image
-          style={{ backgroundColor: "silver", aspectRatio: "3/2" }}
-          src={chatbot}
-          alt=""
-          width={450}
-          height={200}
-        />
-        <CardContent sx={{ paddingBottom: 0, height: "200px" }}>
-          <Typography gutterBottom variant="h5" component="div">
-            Minimal ChatBot
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            Chat with AI and upload files with your prompts for seamless
-            interactions.
-          </Typography>
-        </CardContent>
-        <CardActions>
-          <Button size="small">
-            <Link href="https://chatbot-lovat-sigma.vercel.app/">Visit</Link>
-          </Button>
-        </CardActions>
-      </Card>
-      <Card
-        sx={{
-          maxWidth: 345,
-          margin: "0 1rem",
-          height: "400px",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "space-between",
-        }}
-      >
-        <Image
-          style={{ backgroundColor: "silver", aspectRatio: "3/2" }}
-          src={events}
-          alt=""
-          width={450}
-          height={200}
-        />
-        <CardContent sx={{ paddingBottom: 0, height: "200px" }}>
-          <Typography gutterBottom variant="h5" component="div">
-          EventGalore
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-          effortlessly organize your events with a touch of flair and precision, making every gathering a grand affair.
-          </Typography>
-        </CardContent>
-        <CardActions>
-          <Button size="small">
-            <Link href="https://events-eta-mauve.vercel.app/">Visit</Link>
-          </Button>
-        </CardActions>
-      </Card>
+      {portfolioData.map((item,index)=>(
+            <Card
+            key ={index}
+            sx={{
+              maxWidth: 300,
+              margin: "0 1rem",
+              height: "400px",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "space-between",
+            }}
+          >
+            <Image
+              style={{ backgroundColor: "silver", aspectRatio: "3/2" }}
+              src={item.image}
+              alt=""
+              width={350}
+              height={200}
+            />
+            <CardContent sx={{ paddingBottom: 0 }}>
+              <Typography gutterBottom variant="h5" component="div">
+                {item.description.name}
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+              {item.description.title}
+              </Typography>
+            </CardContent>
+            <CardActions>
+              <Button size="small">
+                <Link className="text-2xl" href={item.link[0]}>
+                  <CgWebsite />
+                </Link>
+              </Button>
+              <Button size="small">
+                <Link className="text-2xl" href={item.link[1]}>
+                  <FaCode />
+                </Link>
+              </Button>
+            </CardActions>                                               
+          </Card>
+      ))}
     </Carousel>
   );
 }

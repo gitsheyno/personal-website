@@ -4,7 +4,6 @@ import styles from "../styles/Portfolio.module.css";
 import { FC } from "react";
 import "react-multi-carousel/lib/styles.css";
 
-
 const Profile: FC = () => {
   return (
     <div id="work" className={styles.container}>
