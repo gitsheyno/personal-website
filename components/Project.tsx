@@ -41,10 +41,20 @@ const portfolioData : Portfolio[] = [
     ]
   },
   {
+    image:"/caleries.png",
+    description:{
+      name:"Low-Carb_Recipes",
+      title:"Deliciously Light, Guilt-Free Recipes"
+    },
+    link:[
+      "https://low-carb-diet-tan.vercel.app/","https://github.com/gitsheyno/low-carb-diet"
+    ]
+  },
+  {
     image:"/events.png",
     description:{
       name:"EventGalore",
-      title:"effortlessly organize your events with a touch of flair and precision, making every gathering a grand affair."
+      title:"effortlessly organize your events."
     },
     link:[
       "https://events-eta-mauve.vercel.app/signin","https://github.com/gitsheyno/rsvp"
@@ -64,7 +74,7 @@ const portfolioData : Portfolio[] = [
     image:"/wagon.png",
     description:{
       name:"Wagon",
-      title:"Discover the fastest and most convenient train connections, saving you valuable time effortlessly."
+      title:"Discover the fastest and most convenient train connections."
     },
     link:[
       "https://app.wagondash.com/login","https://app.wagondash.com/login"
