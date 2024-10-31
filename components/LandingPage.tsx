@@ -20,14 +20,14 @@ const WorkExperience = () => {
                   TypeScrip, improving performance by 15%.
                 </li>
                 <li>
-                  Established utility functions and minimized code duplications
-                  by 8%, significantly improving code maintainability and
-                  efficiency; resulted in a 20% reduction in user complaints and
-                  enhanced overall user satisfaction.
+                  Migrated all KNIME packages to a monorepo ecosystem in
+                  collaboration with frontend developers, resulting in a 25%
+                  performance boost.
                 </li>
                 <li>
-                  Introduced 3 searchable widgets, improving user experience by
-                  20% and boosting client satisfaction by 100%.
+                  Introduced and maintained 5 reusable components using VueJS
+                  and Typescript deployed across all projects to enhance
+                  development.
                 </li>
                 <li>
                   Implemented rigorous testing protocols using Jest for
@@ -35,15 +35,17 @@ const WorkExperience = () => {
                   reliability, which led to a 35% decrease in critical bugs.
                 </li>
                 <li>
-                  Engineered a widget refresh button with monitoring and logging
-                  features in open source KNIME software, enhanced timestamp
-                  management and provided detailed analytics, leading to 10%
-                  improved system performance and 20% increased data accuracy.
+                  Restructured 4 KNIME widgets, adding search functionality,
+                  abstraction, TypeScript and built a multi-file upload widget
+                  from scratch, shared across open-source and business hub
+                  platforms, leading to 10% improved system performance and 20%
+                  increased data accuracy.
                 </li>
                 <li>
-                  Migrated all KNIME packages to a monorepo ecosystem in
-                  collaboration with frontend developers, resulting in a 25%
-                  performance boost.
+                  Established a suite of utility functions to eliminate code
+                  duplication and enhance component abstraction, achieving an 8%
+                  reduction in redundant code and significantly improving
+                  maintainability.
                 </li>
               </ul>
             </div>
@@ -64,8 +66,8 @@ const WorkExperience = () => {
                   quarter of implementation.
                 </li>
                 <li>
-                  Reduced load times by 10% through designing and developing
-                  React.js and components for seamless data integration.
+                  Developed 4 websites using Next.js, leveraging its server-side
+                  rendering capabilities.
                 </li>
                 <li>
                   boosted mobile user engagement by 35% by ensuring mobile
@@ -81,27 +83,27 @@ const WorkExperience = () => {
                   improving overall application performance.
                 </li>
                 <li>
-                  Experienced in workflow automation and build processes using
-                  Gulp,and Webpack to streamline development and improve
-                  efficiency.
+                  Leveraged workflow automation and build processes with Gulp,
+                  Webpack, and GitHub Actions to streamline development and
+                  enhance efficiency.
                 </li>
                 <li>
-                  Optimized data visualizations using D3.js, enhancing the
-                  charts&apos; performance by 10%.
+                  Utilized GraphQL to optimize resulted in boosting overall web
+                  applications performance by 10%.
                 </li>
                 <li>
                   Developed RESTful API integration within React.js Library and
-                  NextJS to facilitate seamless data exchange collaborating with
-                  backend Team.
+                  Typescript and NextJS to facilitate seamless data exchange
+                  collaborating with backend Team.
                 </li>
                 <li>
-                  Led successful migration of state managemen, Transitioned from
-                  Redux Toolkit to React Query, resulting in a 12% increase in
-                  code maintainability and readability.
+                  Led successful migration of state management, Transitioned
+                  from Redux toolkit to Tanstack Query, resulting in a 12%
+                  increase in code maintainability and readability.
                 </li>
                 <li>
-                  Utilized Error Boundaries to catch JavaScript errors,
-                  preventing the entire app from crashing.
+                  Collaborated seamlessly alongside cross-functional teams
+                  including back-end engineers and design professionals.
                 </li>
               </ul>
             </div>
