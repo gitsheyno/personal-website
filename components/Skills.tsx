@@ -1,31 +1,23 @@
-// components/SkillsTabs.tsx
 "use client";
 import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import styles from "../styles/Skills.module.css";
-import { RiReactjsLine } from "react-icons/ri";
-import { RiNextjsFill } from "react-icons/ri";
-import { FaVuejs } from "react-icons/fa";
-import { SiTypescript } from "react-icons/si";
+import { RiReactjsLine, RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
+import { FaVuejs, FaDatabase } from "react-icons/fa";
+import {
+  SiTypescript,
+  SiRedux,
+  SiReactquery,
+  SiExpress,
+  SiPostgresql,
+  SiVitest,
+  SiCypress,
+  SiPostman,
+} from "react-icons/si";
 import { IoLogoJavascript } from "react-icons/io";
-import { RiTailwindCssFill } from "react-icons/ri";
-import { SiRedux } from "react-icons/si";
-import { SiReactquery } from "react-icons/si";
-
-import { SiExpress } from "react-icons/si";
-import { SiPostgresql } from "react-icons/si";
-import { DiMongodb } from "react-icons/di";
-import { DiNodejs } from "react-icons/di";
-import { FaDatabase } from "react-icons/fa6";
-
-import { SiVitest } from "react-icons/si";
-import { SiCypress } from "react-icons/si";
-import { SiPostman } from "react-icons/si";
-
-import { CiServer } from "react-icons/ci";
-import { CiMonitor } from "react-icons/ci";
+import { DiMongodb, DiNodejs } from "react-icons/di";
+import { CiServer, CiMonitor } from "react-icons/ci";
 import { GrTest } from "react-icons/gr";
-
-import Image from "next/image";
 
 const skillsData = [
   {
@@ -56,7 +48,7 @@ const skillsData = [
   {
     category: "Testing Expertise",
     description:
-      "I bring a wealth of expertise in ensuring application reliability and functionality, with a focus on robust unit and integration testing. Leading a team dedicated to quality, I specialize in tools like Vitest and Jest to deliver high-performing, thoroughly tested applications. My approach emphasizes Test-Driven Development (TDD), ensuring every component is carefully validated and integrates seamlessly",
+      "I bring a wealth of expertise in ensuring application reliability and functionality, with a focus on robust unit and integration testing. Leading a team dedicated to quality, I specialize in tools like Vitest and Jest to deliver high-performing, thoroughly tested applications. My approach emphasizes Test-Driven Development (TDD), ensuring every component is carefully validated and integrates seamlessly.",
     skills: [SiVitest, SiCypress, SiPostman],
     src: [GrTest],
     bg: "orange",
@@ -83,27 +75,35 @@ const SkillsTabs = () => {
                 style={{ backgroundColor: `${tab.bg}` }}
                 className={styles.buttonIcon}
               >
-                {skillsData[index].src?.map((Item, index) => (
-                  <Item key={index} />
+                {tab.src?.map((Icon, index) => (
+                  <Icon key={index} />
                 ))}
               </div>
               {tab.category}
             </button>
           ))}
         </div>
+
         <div className={styles.content}>
-          <div className={styles.contentBox}>
-            <p>{skillsData[activeTab].description}</p>
-            <div className={styles.icons}>
-              {skillsData[activeTab].skills?.map((Item, index) => (
-                <object key={index} className={styles.icons}>
-                  <div className={styles.icon}>
-                    <Item key={index} />
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activeTab}
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -20 }}
+              transition={{ duration: 0.3 }}
+              className={styles.contentBox}
+            >
+              <p>{skillsData[activeTab].description}</p>
+              <div className={styles.icons}>
+                {skillsData[activeTab].skills?.map((Icon, index) => (
+                  <div key={index} className={styles.icon}>
+                    <Icon />
                   </div>
-                </object>
-              ))}
-            </div>
-          </div>
+                ))}
+              </div>
+            </motion.div>
+          </AnimatePresence>
         </div>
       </div>
     </div>

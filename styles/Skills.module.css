@@ -7,7 +7,7 @@
 }
 
 .skillsTitle {
-  font-family: 'Arial, sans-serif';
+  font-family: "Arial, sans-serif";
   font-size: 2rem;
   color: #333;
   margin-bottom: 1.5rem;
@@ -32,7 +32,7 @@
   /* background-color: #5e5151; */
   border: 1px solid rgb(255, 228, 196);
 
-  font-family: 'Arial, sans-serif';
+  font-family: "Arial, sans-serif";
   font-size: 1rem;
   color: #333;
   cursor: pointer;
@@ -42,7 +42,7 @@
   border-radius: 8px;
   transition: background-color 0.3s ease;
 }
-.buttonIcon{
+.buttonIcon {
   font-size: 2rem;
   border-radius: 100%;
   display: flex;
@@ -52,59 +52,41 @@
   padding: 0.8rem;
 }
 .tabButton:hover {
-  background-color:rgb(255, 228, 196);
-
+  background-color: rgb(255, 228, 196);
 }
 
-.tabButton:first-child.active{
-border: 1px solid red;
+.tabButton:first-child.active {
+  border: 1px solid red;
 }
-.tabButton:nth-child(2).active{
+.tabButton:nth-child(2).active {
   border: 1px solid green;
-  }
-  .tabButton:nth-child(3).active{
-    border: 1px solid orange;
-    }
-
-
-
-
+}
+.tabButton:nth-child(3).active {
+  border: 1px solid orange;
+}
 
 .content {
   flex: 1;
-  min-width: 60%; 
+  min-width: 60%;
   height: 500px;
-
-
 }
 
 .contentBox {
   text-align: left;
   padding: 0rem 0;
   border-radius: 8px;
-  animation: fadeIn 0.5s ease-in-out;
 }
 
-.icons{
+.icons {
   margin-top: 1rem;
   font-size: 3rem;
   display: flex;
   gap: 1rem;
 }
-.icon{
+.icon {
   background-color: black;
   color: white;
   border-radius: 5px;
-}
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 .skillsList {
@@ -114,74 +96,50 @@ border: 1px solid red;
 }
 
 .skillsList li {
-  font-family: 'Arial, sans-serif';
+  font-family: "Arial, sans-serif";
   font-size: 1rem;
   color: #666;
   margin-bottom: 0.5rem;
 }
 
-@media (max-width:800px){
-.skillsContainer {
-max-width: 100%;
-}
-.tabsContainer{
-  flex-direction: column;
-  align-items: center;
-}
-.tabs {
-  display: flex;
-  flex-direction: row;
-  gap: 1rem;
-}
-.tabButton {
-  padding: 0.5rem 1rem;
-  border: none;
-  /* background-color: #5e5151; */
-  border: 1px solid rgba(0, 0, 0, 0.402);
+@media (max-width: 800px) {
+  .skillsContainer {
+    max-width: 100%;
+  }
+  .tabsContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+  .tabs {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+  }
+  .tabButton {
+    padding: 0.5rem 1rem;
+    border: none;
+    /* background-color: #5e5151; */
+    border: 1px solid rgba(0, 0, 0, 0.402);
 
-  font-family: 'Arial, sans-serif';
-  font-size: 0.6rem;
-  color: #333;
-  cursor: pointer;
-  display: flex;
-  gap: 0.4rem;
-  align-items: center;
-  border-radius: 8px;
-  transition: background-color 0.3s ease;
-}
-.buttonIcon{
-  font-size: 1rem;
-  /* border: 1px solid black; */
-  background-color: red;
-  border-radius: 100%;
-  display: flex;
-  color: black;
-  align-items: center;
-  justify-content: center;
-  padding: 0.4rem;
-}
-
-.contentBox {
-  /* background-color: #fff; */
-  /* text-align: center; */
-  padding: 0.5rem 1rem;
-
-  border-radius: 8px;
-  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
-  /* overflow-y: auto; Handle overflow if content is too long */
-  animation: fadeIn 0.5s ease-in-out;
-}
-.icons{
-  margin-top: 1rem;
-  font-size: 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-}
-.icon{
-  background-color: black;
-  color: white;
-  border-radius: 5px;
-}
+    font-family: "Arial, sans-serif";
+    font-size: 0.6rem;
+    color: #333;
+    cursor: pointer;
+    display: flex;
+    gap: 0.4rem;
+    align-items: center;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+  }
+  .buttonIcon {
+    font-size: 1rem;
+    /* border: 1px solid black; */
+    background-color: red;
+    border-radius: 100%;
+    display: flex;
+    color: black;
+    align-items: center;
+    justify-content: center;
+    padding: 0.4rem;
+  }
 }
