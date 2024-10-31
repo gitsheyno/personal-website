@@ -56,7 +56,7 @@ const skillsData = [
   {
     category: "Testing Expertise",
     description:
-      "I bring a wealth of expertise in ensuring the reliability and functionality of your applications. My proficiency spans a variety of tools, with a particular focus on Cypress, where I lead a team in delivering high-quality end-to-end testing solutions. From robust API testing using Postman to intricate unit testing with IntelliJ, I employ a comprehensive testing strategy to fortify your codebase.Testing Leadership and Innovation: Guiding a dedicated team, I leverage Cypress to conduct thorough end-to-end testing, ensuring your applications perform seamlessly across diverse scenarios. Postman is my go-to for meticulous API testing, guaranteeing that your backend systems are as reliable as your frontend. In the world of unit testing, I utilize the power of IntelliJ to meticulously examine and validate individual components. As a trailblazer in testing, I'm also at the forefront of the evolving landscape with Vitest. Together, let's ensure your applications not only meet but exceed the highest standards of quality. Connect with me to explore how we can elevate your testing processes and deliver flawless user experiences.",
+      "I bring a wealth of expertise in ensuring application reliability and functionality, with a focus on robust unit and integration testing. Leading a team dedicated to quality, I specialize in tools like Vitest and Jest to deliver high-performing, thoroughly tested applications. My approach emphasizes Test-Driven Development (TDD), ensuring every component is carefully validated and integrates seamlessly",
     skills: [SiVitest, SiCypress, SiPostman],
     src: [GrTest],
     bg: "orange",
