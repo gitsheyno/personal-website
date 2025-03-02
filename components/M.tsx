@@ -54,9 +54,7 @@ export default function Main() {
                   digital experiences with clean, efficient code.
                 </p>
 
-                {/* Experience and Social Container */}
                 <div className="flex flex-col sm:flex-row sm:items-center gap-6 pt-4">
-                  {/* Experience Badge */}
                   <div className="flex items-center gap-4 bg-white dark:bg-gray-800 p-4 rounded-xl shadow-lg w-fit">
                     <div className="flex items-center justify-center w-16 h-16 rounded-full bg-green-100 dark:bg-green-900">
                       <span className="text-3xl font-bold text-green-600 dark:text-green-400">
@@ -70,7 +68,6 @@ export default function Main() {
                     </div>
                   </div>
 
-                  {/* Social Links */}
                   <div className="flex gap-4 items-center">
                     <Link
                       href="https://github.com/gitsheyno"
