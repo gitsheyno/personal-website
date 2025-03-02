@@ -1,35 +1,40 @@
 "use client";
+
 import React, { useEffect, useState } from "react";
-import styles from "../styles/Carousel.module.css";
 
 interface VerticalSliderProps {
   slides: string[];
+  slideInterval?: number;
 }
 
-const VerticalSlider: React.FC<VerticalSliderProps> = ({ slides }) => {
+const VerticalSlider: React.FC<VerticalSliderProps> = ({
+  slides,
+  slideInterval = 3000,
+}) => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const slideHeight = 30; // Adjust based on your slide height
-  const translateY = -currentIndex * slideHeight;
 
   useEffect(() => {
     const intervalId = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % slides.length);
-    }, 3000); // Adjust the interval duration as needed
+    }, slideInterval);
+
     return () => clearInterval(intervalId);
-  }, [slides.length]);
+  }, [slides.length, slideInterval]);
 
   return (
-    <div className={styles.sliderContainer}>
-      <div
-        className={styles.sliderContent}
-        style={{ transform: `translateY(${translateY}px)` }}
-      >
-        {slides.map((slide, index) => (
-          <div key={index} className={styles.slide}>
-            {slide}
-          </div>
-        ))}
-      </div>
+    <div className="relative h-8 overflow-hidden">
+      {slides.map((slide, index) => (
+        <div
+          key={index}
+          className={`absolute top-0 left-0 w-full h-8 flex items-center transition-all duration-500 ease-in-out ${
+            index === currentIndex
+              ? "opacity-100 transform translate-y-0"
+              : "opacity-0 transform -translate-y-full"
+          }`}
+        >
+          {slide}
+        </div>
+      ))}
     </div>
   );
 };

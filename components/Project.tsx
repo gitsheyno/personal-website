@@ -1,193 +1,214 @@
 "use client";
+import { FC } from "react";
 import Carousel from "react-multi-carousel";
-import wagon from "../public/wagon.png";
-import calories from "../public/caleries.png";
-import knime from "../public/knime2.png";
-import chatbot from "../public/chatbot.png";
-import events from "../public/events.png";
-import { FaCode } from "react-icons/fa";
-import { CgWebsite } from "react-icons/cg";
-import React from "react";
-import {
-  Button,
-  Card,
-  CardActions,
-  CardContent,
-  CardMedia,
-  Typography,
-} from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
+import { FaCode, FaExternalLinkAlt } from "react-icons/fa";
 
-interface Portfolio {
+// Define the portfolio item type
+interface PortfolioItem {
+  id: string;
   image: string;
   description: {
     name: string;
     title: string;
   };
+  technologies: string[];
   link: string[];
 }
 
+const portfolioData: PortfolioItem[] = [
+  {
+    id: "knime",
+    image: "/knime2.png",
+    description: {
+      name: "KNIME",
+      title: "Open-source analytics platform",
+    },
+    technologies: ["Analytics", "Data Science", "Workflow"],
+    link: [
+      "https://www.knime.com/downloads",
+      "https://github.com/orgs/knime/repositories",
+    ],
+  },
+  {
+    id: "low-carb",
+    image: "/caleries.png",
+    description: {
+      name: "Low-Carb Recipes",
+      title: "Deliciously Light, Guilt-Free Recipes",
+    },
+    technologies: ["React", "NextJS", "TailwindCSS"],
+    link: [
+      "https://low-carb-diet-tan.vercel.app/",
+      "https://github.com/gitsheyno/low-carb-diet",
+    ],
+  },
+  {
+    id: "events",
+    image: "/events.png",
+    description: {
+      name: "EventGalore",
+      title: "Effortlessly organize your events",
+    },
+    technologies: ["React", "Firebase", "Auth"],
+    link: [
+      "https://events-eta-mauve.vercel.app/signin",
+      "https://github.com/gitsheyno/rsvp",
+    ],
+  },
+  {
+    id: "chatbot",
+    image: "/chatbot.png",
+    description: {
+      name: "ChatBot",
+      title: "Chat with AI and upload files with your prompts",
+    },
+    technologies: ["NextJS", "OpenAI", "Tailwind", "Langchain"],
+    link: [
+      "https://german-dictionary-llm.vercel.app/",
+      "https://github.com/gitsheyno/German-dictionary-llm",
+    ],
+  },
+  {
+    id: "wagon",
+    image: "/wagon.png",
+    description: {
+      name: "Wagon",
+      title: "Discover fast & convenient train connections",
+    },
+    technologies: ["React", "Maps API", "Material UI"],
+    link: [
+      "https://app.wagondash.com/login",
+      "https://app.wagondash.com/login",
+    ],
+  },
+  {
+    id: "learnly",
+    image: "/learnly.png",
+    description: {
+      name: "Learnly",
+      title: "Effortlessly find your tutor, Or become one",
+    },
+    technologies: ["NextJS", "Prisma", "tRPC"],
+    link: [
+      "https://learnly-iota.vercel.app/",
+      "https://github.com/gitsheyno/Learnly",
+    ],
+  },
+];
 
-const portfolioData : Portfolio[] = [
-  {
-    image:"/knime2.png",
-    description:{
-      name:"KNIME",
-      title:"open-source analytics platform"
+const ProjectCarousel: FC = () => {
+  const responsive = {
+    superLargeDesktop: {
+      breakpoint: { max: 4000, min: 1536 },
+      items: 4,
+      partialVisibilityGutter: 40,
     },
-    link:[
-      "https://www.knime.com/downloads","https://github.com/orgs/knime/repositories"
-    ]
-  },
-  {
-    image:"/caleries.png",
-    description:{
-      name:"Low-Carb_Recipes",
-      title:"Deliciously Light, Guilt-Free Recipes"
+    desktop: {
+      breakpoint: { max: 1536, min: 1024 },
+      items: 3,
+      partialVisibilityGutter: 30,
     },
-    link:[
-      "https://low-carb-diet-tan.vercel.app/","https://github.com/gitsheyno/low-carb-diet"
-    ]
-  },
-  {
-    image:"/events.png",
-    description:{
-      name:"EventGalore",
-      title:"effortlessly organize your events."
+    tablet: {
+      breakpoint: { max: 1024, min: 640 },
+      items: 2,
+      partialVisibilityGutter: 20,
     },
-    link:[
-      "https://events-eta-mauve.vercel.app/signin","https://github.com/gitsheyno/rsvp"
-    ]
-  },
-  {
-    image:"/chatbot.png",
-    description:{
-      name:"Minimal ChatBot",
-      title:"Chat with AI and upload files with your prompts for seamless interactions."
+    mobile: {
+      breakpoint: { max: 640, min: 0 },
+      items: 1,
+      partialVisibilityGutter: 10,
     },
-    link:[
-      "https://chatbot-lovat-sigma.vercel.app/","https://github.com/gitsheyno/chatbot"
-    ]
-  },
-  {
-    image:"/wagon.png",
-    description:{
-      name:"Wagon",
-      title:"Discover the fastest and most convenient train connections."
-    },
-    link:[
-      "https://app.wagondash.com/login","https://app.wagondash.com/login"
-    ]
-  },
-  {
-    image:"/learnly.png",
-    description:{
-      name:"Learnly",
-      title:"effortlessly find your tutor, Or become a tutor."
-    },
-    link:[
-      "https://learnly-iota.vercel.app/","https://github.com/gitsheyno/Learnly"
-    ]
-  },
-]
-export default function Project() {
+  };
+
   return (
     <Carousel
       additionalTransfrom={0}
       arrows
-      autoPlaySpeed={3000}
+      autoPlay
+      autoPlaySpeed={5000}
       centerMode={false}
       className=""
-      containerClass="container"
-      dotListClass=""
+      containerClass="container-with-dots"
+      dotListClass="custom-dot-list-style"
       draggable
       focusOnSelect={false}
       infinite
-      itemClass=""
       keyBoardControl
       minimumTouchDrag={80}
-      partialVisible
       pauseOnHover
       renderArrowsWhenDisabled={false}
       renderButtonGroupOutside={false}
       renderDotsOutside={false}
-      responsive={{
-        desktop: {
-          breakpoint: {
-            max: 3000,
-            min: 1024,
-          },
-          items: 3,
-          partialVisibilityGutter: 40,
-        },
-        mobile: {
-          breakpoint: {
-            max: 464,
-            min: 0,
-          },
-          items: 1,
-          partialVisibilityGutter: 30,
-        },
-        tablet: {
-          breakpoint: {
-            max: 1024,
-            min: 464,
-          },
-          items: 2,
-          partialVisibilityGutter: 30,
-        },
-      }}
+      responsive={responsive}
       rewind={false}
       rewindWithAnimation={false}
       rtl={false}
       shouldResetAutoplay
-      showDots={false}
+      showDots={true}
       sliderClass=""
       slidesToSlide={1}
       swipeable
     >
-      {portfolioData.map((item,index)=>(
-            <Card
-            key ={index}
-            sx={{
-              maxWidth: 300,
-              margin: "0 1rem",
-              height: "400px",
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "space-between",
-            }}
-          >
-            <Image
-              style={{ backgroundColor: "silver", aspectRatio: "3/2" }}
-              src={item.image}
-              alt=""
-              width={350}
-              height={200}
-            />
-            <CardContent sx={{ paddingBottom: 0 }}>
-              <Typography gutterBottom variant="h5" component="div">
-                {item.description.name}
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-              {item.description.title}
-              </Typography>
-            </CardContent>
-            <CardActions>
-              <Button size="small">
-                <Link className="text-2xl" href={item.link[0]}>
-                  <CgWebsite />
+      {portfolioData.map((project) => (
+        <div key={project.id} className="px-3 py-4">
+          <div className="rounded-xl overflow-hidden bg-white dark:bg-gray-800 shadow-lg hover:shadow-xl transition-shadow duration-300 h-[420px] flex flex-col">
+            <div className="relative h-48 overflow-hidden">
+              <Image
+                src={project.image}
+                alt={project.description.name}
+                fill
+                className="object-cover transform hover:scale-105 transition-transform duration-300"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              />
+            </div>
+
+            <div className="p-5 flex-1 flex flex-col">
+              <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-1">
+                {project.description.name}
+              </h3>
+
+              <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">
+                {project.description.title}
+              </p>
+
+              <div className="flex flex-wrap gap-2 mt-auto mb-4">
+                {project.technologies.map((tech, index) => (
+                  <span
+                    key={index}
+                    className="text-xs px-2 py-1 rounded-full bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-300"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+
+              <div className="flex justify-between items-center mt-auto pt-4 border-t border-gray-100 dark:border-gray-700">
+                <Link
+                  href={project.link[0]}
+                  target="_blank"
+                  className="flex items-center gap-2 text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 transition-colors"
+                >
+                  <FaExternalLinkAlt />
+                  <span className="text-sm font-medium">Live Demo</span>
                 </Link>
-              </Button>
-              <Button size="small">
-                <Link className="text-2xl" href={item.link[1]}>
+
+                <Link
+                  href={project.link[1]}
+                  target="_blank"
+                  className="flex items-center gap-2 text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200 transition-colors"
+                >
                   <FaCode />
+                  <span className="text-sm font-medium">Code</span>
                 </Link>
-              </Button>
-            </CardActions>                                               
-          </Card>
+              </div>
+            </div>
+          </div>
+        </div>
       ))}
     </Carousel>
   );
-}
+};
+
+export default ProjectCarousel;
