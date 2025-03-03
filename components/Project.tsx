@@ -25,20 +25,49 @@ const portfolioData: PortfolioItem[] = [
       name: "KNIME",
       title: "Open-source analytics platform",
     },
-    technologies: ["Analytics", "Data Science", "Workflow"],
+    technologies: [
+      "VueJS",
+      "Nuxt3",
+      "TS",
+      "SCSS",
+      "Vitest",
+      "CI-CD Pipelines",
+      "Docker",
+    ],
     link: [
       "https://www.knime.com/downloads",
       "https://github.com/orgs/knime/repositories",
     ],
   },
   {
+    id: "UV-Simulator",
+    image: "/ev.png",
+    description: {
+      name: "UV-Simulator",
+      title: "simulator for UV stations",
+    },
+    technologies: ["React", "TS", "TailwindCSS"],
+    link: [
+      "https://ev-simulation.vercel.app",
+      "https://github.com/gitsheyno/EV-simulation",
+    ],
+  },
+  {
     id: "low-carb",
-    image: "/caleries.png",
+    image: "/Diet.png",
     description: {
       name: "Low-Carb Recipes",
       title: "Deliciously Light, Guilt-Free Recipes",
     },
-    technologies: ["React", "NextJS", "TailwindCSS"],
+    technologies: [
+      "React",
+      "NodeJS",
+      "TailwindCSS",
+      "Material UI",
+      "React Router",
+      "TanstackQuery",
+      "SQLITE",
+    ],
     link: [
       "https://low-carb-diet-tan.vercel.app/",
       "https://github.com/gitsheyno/low-carb-diet",
@@ -46,20 +75,29 @@ const portfolioData: PortfolioItem[] = [
   },
   {
     id: "events",
-    image: "/events.png",
+    image: "/Event.png",
     description: {
       name: "EventGalore",
       title: "Effortlessly organize your events",
     },
-    technologies: ["React", "Firebase", "Auth"],
+    technologies: [
+      "VueJS",
+      "TS",
+      "NodeJS",
+      "Tailwind CSS",
+      "vitest",
+      "CI-CD Pipelines",
+      "Docker",
+      "Nginx",
+    ],
     link: [
-      "https://events-eta-mauve.vercel.app/signin",
-      "https://github.com/gitsheyno/rsvp",
+      "https://festivals-nine.vercel.app",
+      "https://github.com/gitsheyno/code-challenge",
     ],
   },
   {
     id: "chatbot",
-    image: "/chatbot.png",
+    image: "/Bot.png",
     description: {
       name: "ChatBot",
       title: "Chat with AI and upload files with your prompts",
@@ -71,26 +109,13 @@ const portfolioData: PortfolioItem[] = [
     ],
   },
   {
-    id: "wagon",
-    image: "/wagon.png",
-    description: {
-      name: "Wagon",
-      title: "Discover fast & convenient train connections",
-    },
-    technologies: ["React", "Maps API", "Material UI"],
-    link: [
-      "https://app.wagondash.com/login",
-      "https://app.wagondash.com/login",
-    ],
-  },
-  {
     id: "learnly",
     image: "/learnly.png",
     description: {
       name: "Learnly",
       title: "Effortlessly find your tutor, Or become one",
     },
-    technologies: ["NextJS", "Prisma", "tRPC"],
+    technologies: ["NextJS", "Prisma", "Tailwind CSS", "Shadcn"],
     link: [
       "https://learnly-iota.vercel.app/",
       "https://github.com/gitsheyno/Learnly",
@@ -173,7 +198,7 @@ const ProjectCarousel: FC = () => {
                 {project.description.title}
               </p>
 
-              <div className="flex flex-wrap gap-2 mt-auto mb-4">
+              <div className="flex flex-wrap  gap-2 mt-auto mb-4">
                 {project.technologies.map((tech, index) => (
                   <span
                     key={index}
