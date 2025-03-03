@@ -109,7 +109,7 @@ const WorkExperience: FC = () => {
               }}
             >
               {/* Timeline dot */}
-              <div
+              {/* <div
                 className="absolute top-0 left-6 md:left-0 w-6 h-6 rounded-full z-10 shadow-md border-4 border-white dark:border-gray-800"
                 style={{
                   backgroundColor: exp.color,
@@ -117,7 +117,7 @@ const WorkExperience: FC = () => {
                   [index % 2 === 0 ? "md:left" : "md:right"]: "auto",
                   transform: "translateX(-50%)",
                 }}
-              ></div>
+              ></div> */}
 
               {/* Content card */}
               <motion.div

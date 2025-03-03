@@ -9,7 +9,7 @@ const ProjectCarousel = dynamic(() => import("./Project"), { ssr: false });
 const Portfolio: FC = () => {
   return (
     <div
-      id="work"
+      id="works"
       className="w-full py-20 bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800"
     >
       <div className="container mx-auto px-4">

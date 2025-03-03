@@ -32,7 +32,7 @@ export default function Main() {
                     Hey There,
                     <br />
                     I&apos;m
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400">
+                    <span className=" ml-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400">
                       Shayan
                     </span>
                   </h1>
@@ -233,13 +233,13 @@ export default function Main() {
                         <path
                           d="M70,200 Q50,250 70,300"
                           stroke="#f6ad55"
-                          stroke-width="8"
+                          strokeWidth="8"
                           fill="none"
                         />
                         <path
                           d="M430,200 Q450,250 430,300"
                           stroke="#f6ad55"
-                          stroke-width="8"
+                          strokeWidth="8"
                           fill="none"
                         />
 
@@ -252,7 +252,7 @@ export default function Main() {
                           x2="410"
                           y2="130"
                           stroke="#a0aec0"
-                          stroke-width="2"
+                          strokeWidth="2"
                         />
                         <line
                           x1="410"
@@ -260,7 +260,7 @@ export default function Main() {
                           x2="390"
                           y2="160"
                           stroke="#a0aec0"
-                          stroke-width="2"
+                          strokeWidth="2"
                         />
 
                         <rect
@@ -299,7 +299,7 @@ export default function Main() {
           </section>
 
           {/* Skills Section */}
-          <section id="skills" className="py-24">
+          <section id="services" className="py-24">
             <div className="max-w-5xl mx-auto">
               <div className="text-center mb-12">
                 <h2 className="text-sm uppercase tracking-wider font-bold text-blue-600 dark:text-blue-400 mb-2">

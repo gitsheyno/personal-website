@@ -17,21 +17,40 @@ import { IoLogoJavascript } from "react-icons/io";
 import { DiMongodb, DiNodejs } from "react-icons/di";
 import { CiServer, CiMonitor } from "react-icons/ci";
 import { GrTest } from "react-icons/gr";
+import Link from "next/link";
 
 const skillsData = [
   {
     category: "Frontend Skills",
     description:
-      "As a frontend developer, I specialize in React, NextJS, Vue, NuxtJS, Vite, and Tailwind CSS to create sleek, modern designs, and use TypeScript for robust, maintainable code. With a passion for crafting dynamic web experiences, I utilize the latest technologies to build responsive and scalable applications. From accelerating development with Vite to designing stylish interfaces with Tailwind, I transform ideas into reality with a collaborative and adaptable approach. Let's work together to elevate your web presence and deliver exceptional user experiences. Why choose me? I am dedicated to perfection, prioritizing your satisfaction in every project. With a strong emphasis on communication, I work closely with clients to understand their needs and exceed their expectations. By staying at the forefront of industry trends, I provide cutting-edge solutions that adapt to evolving technologies. Ready to embark on a coding journey together? Contact me to discuss how we can bring your vision to life.",
+      "As a frontend developer, I specialize in React, NextJS, Vue, NuxtJS, Vite, and Tailwind CSS to create sleek, modern designs, and use TypeScript for robust, maintainable code. With a passion for crafting dynamic web experiences, I utilize the latest technologies to build responsive and scalable applications. From accelerating development with Vite to designing stylish interfaces with Tailwind, I transform ideas into reality with a collaborative and adaptable approach. Let's work together to elevate your web presence and deliver exceptional user experiences.",
     skills: [
-      RiReactjsLine,
-      RiNextjsFill,
-      FaVuejs,
-      SiTypescript,
-      IoLogoJavascript,
-      RiTailwindCssFill,
-      SiRedux,
-      SiReactquery,
+      { name: "React", icon: RiReactjsLine, url: "https://react.dev/" },
+      { name: "Next.js", icon: RiNextjsFill, url: "https://nextjs.org/" },
+      { name: "Vue.js", icon: FaVuejs, url: "https://vuejs.org/" },
+      { name: "Nuxt.js", icon: FaVuejs, url: "https://nuxt.com/" },
+      { name: "Vite", icon: SiTypescript, url: "https://vitejs.dev/" },
+      {
+        name: "TypeScript",
+        icon: SiTypescript,
+        url: "https://www.typescriptlang.org/",
+      },
+      {
+        name: "JavaScript",
+        icon: IoLogoJavascript,
+        url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+      },
+      {
+        name: "Tailwind CSS",
+        icon: RiTailwindCssFill,
+        url: "https://tailwindcss.com/",
+      },
+      { name: "Redux", icon: SiRedux, url: "https://redux.js.org/" },
+      {
+        name: "React Query",
+        icon: SiReactquery,
+        url: "https://tanstack.com/query/latest",
+      },
     ],
     src: [CiMonitor],
     color: "from-red-500 to-pink-600",
@@ -41,8 +60,20 @@ const skillsData = [
   {
     category: "Backend Skills",
     description:
-      "On the backend, I specialize in TypeScript, Express.js, Postgres, and MongoDB. With a deep understanding of server-side architecture, I craft robust APIs and scalable solutions that power dynamic web experiences. Backend Expertise: Leveraging the power of TypeScript, I ensure the integrity and reliability of your codebase, providing a solid foundation for your applications. Using Express.js, I build efficient and secure APIs that facilitate seamless communication between the frontend and backend. Whether it's harnessing the power of Postgres for relational data or structuring documents with MongoDB, I bring a comprehensive skill set to manage your data effectively. Additionally, I implement both GraphQL and REST API to provide flexible and efficient data retrieval methods. Contact me today to discuss how we can seamlessly integrate your frontend and backend for a cohesive and exceptional user experience.",
-    skills: [SiExpress, SiPostgresql, DiMongodb, DiNodejs, FaDatabase, SiRedux],
+      "On the backend, I specialize in TypeScript, Express.js, Postgres, and MongoDB. With a deep understanding of server-side architecture, I craft robust APIs and scalable solutions that power dynamic web experiences.",
+    skills: [
+      { name: "Express.js", icon: SiExpress, url: "https://expressjs.com/" },
+      {
+        name: "PostgreSQL",
+        icon: SiPostgresql,
+        url: "https://www.postgresql.org/",
+      },
+      { name: "MongoDB", icon: DiMongodb, url: "https://www.mongodb.com/" },
+      { name: "Node.js", icon: DiNodejs, url: "https://nodejs.org/" },
+      { name: "GraphQL", icon: FaDatabase, url: "https://graphql.org/" },
+      { name: "REST API", icon: FaDatabase, url: "https://restfulapi.net/" },
+      { name: "Redux", icon: SiRedux, url: "https://redux.js.org/" },
+    ],
     src: [CiServer],
     color: "from-green-500 to-emerald-600",
     iconBg: "bg-green-100 dark:bg-green-900/30",
@@ -51,8 +82,13 @@ const skillsData = [
   {
     category: "Testing Expertise",
     description:
-      "I bring a wealth of expertise in ensuring application reliability and functionality, with a focus on robust unit and integration testing. Leading a team dedicated to quality, I specialize in tools like Vitest and Jest to deliver high-performing, thoroughly tested applications. My approach emphasizes Test-Driven Development (TDD), ensuring every component is carefully validated and integrates seamlessly.",
-    skills: [SiVitest, SiCypress, SiPostman],
+      "I bring a wealth of expertise in ensuring application reliability and functionality, with a focus on robust unit and integration testing. Leading a team dedicated to quality, I specialize in tools like Vitest and Jest to deliver high-performing, thoroughly tested applications.",
+    skills: [
+      { name: "Vitest", icon: SiVitest, url: "https://vitest.dev/" },
+      { name: "Cypress", icon: SiCypress, url: "https://www.cypress.io/" },
+      { name: "Postman", icon: SiPostman, url: "https://www.postman.com/" },
+      { name: "Jest", icon: SiPostman, url: "https://jestjs.io/" },
+    ],
     src: [GrTest],
     color: "from-orange-500 to-amber-600",
     iconBg: "bg-orange-100 dark:bg-orange-900/30",
@@ -127,19 +163,25 @@ const SkillsTabs = () => {
                     Key Technologies:
                   </h3>
                   <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-                    {skillsData[activeTab].skills?.map((Icon, index) => (
-                      <div
+                    {skillsData[activeTab].skills.map((skill, index) => (
+                      <Link
+                        href={skill.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         key={index}
                         className="flex flex-col items-center gap-2 p-4 rounded-xl bg-gray-50 dark:bg-gray-900 hover:bg-gray-100 dark:hover:bg-gray-950 transition-colors"
                       >
                         <div
                           className={`flex items-center justify-center w-12 h-12 rounded-full ${skillsData[activeTab].iconBg}`}
                         >
-                          <Icon
+                          <skill.icon
                             className={`text-2xl ${skillsData[activeTab].iconColor}`}
                           />
                         </div>
-                      </div>
+                        <span className="text-sm text-center text-gray-700 dark:text-gray-300">
+                          {skill.name}
+                        </span>
+                      </Link>
                     ))}
                   </div>
                 </div>
@@ -151,17 +193,5 @@ const SkillsTabs = () => {
     </div>
   );
 };
-
-// Add a custom scrollbar style in your global CSS
-// .custom-scrollbar::-webkit-scrollbar {
-//   width: 6px;
-// }
-// .custom-scrollbar::-webkit-scrollbar-track {
-//   background: transparent;
-// }
-// .custom-scrollbar::-webkit-scrollbar-thumb {
-//   background-color: rgba(156, 163, 175, 0.5);
-//   border-radius: 20px;
-// }
 
 export default SkillsTabs;

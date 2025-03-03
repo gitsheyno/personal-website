@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import HamburgerMenu from "./HamburgerMenu";
 import { IoCall } from "react-icons/io5";
+import Link from "next/link";
 
 const NavBar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -34,18 +35,17 @@ const NavBar = () => {
               Shayan
             </a>
           </div>
-
           {/* Desktop Navigation */}
           <ul className="hidden md:flex items-center space-x-8">
-            {["Services", "Experiences", "Works", "Contact"].map(
+            {["Services", "Experiences", "Works", "Contacts"].map(
               (item, index) => (
                 <li key={index}>
-                  <a
+                  <Link
                     href={`#${item.toLowerCase()}`}
                     className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition-colors"
                   >
                     {item}
-                  </a>
+                  </Link>
                 </li>
               )
             )}
