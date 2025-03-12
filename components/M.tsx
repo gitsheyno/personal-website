@@ -87,7 +87,7 @@ export default function Main() {
                 {/* Call to Action */}
                 <div className="pt-6 flex flex-wrap gap-4">
                   <a
-                    href="#work"
+                    href="#works"
                     className="px-8 py-3 bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white font-medium rounded-full shadow-lg hover:shadow-xl transition-all"
                   >
                     View My Work
