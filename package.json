@@ -12,12 +12,12 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@babel/runtime": "^7.26.10",
     "@emotion/react": "^11.13.0",
     "@emotion/styled": "^11.13.0",
     "@lottiefiles/dotlottie-react": "^0.7.2",
     "@mui/icons-material": "^5.16.5",
     "@mui/material": "^5.16.5",
-    "@react-email/components": "^0.0.21",
     "@types/react-swipeable-views-utils": "^0.13.7",
     "framer-motion": "^11.11.11",
     "next": "^15.2.2",

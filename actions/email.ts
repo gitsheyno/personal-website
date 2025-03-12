@@ -1,46 +1,34 @@
 "use server";
 
 import { Resend } from "resend";
-import ContactFormEmail from "@/email/contact-form-email";
 
 const resend = new Resend(process.env.API_KEY);
 
-export const sendEmail = async (formData: FormData) => {
-  console.log("Send");
-  const senderEmail = formData.get("senderEmail");
-  const message = formData.get("fullName") as string;
-  console.log("Send", message);
-
-  // simple server-side validation
-  //   if (!validateString(senderEmail, 500)) {
-  //     return {
-  //       error: "Invalid sender email",
-  //     };
-  //   }
-  //   if (!validateString(message, 5000)) {
-  //     return {
-  //       error: "Invalid message",
-  //     };
-  //   }
+export const sendEmail = async (
+  _state: { status: boolean; message: string },
+  formData: FormData
+) => {
   try {
-    resend.emails.send({
-      from: "nonumber@resend.dev",
+    const fullName = formData.get("fullName") as string;
+    const senderEmail = formData.get("email") as string;
+    const message = formData.get("message") as string;
+
+    const response = await resend.emails.send({
+      from: "onboarding@resend.dev",
       to: "hdrydeveloper@gmail.com",
-      subject: "",
-      html: "<p>When You Cook ?!</p>",
+      subject: `Email address : ${senderEmail} and email from ${fullName}`,
+      text: message,
     });
+    const { data, error } = response;
+
+    if (error) {
+      console.error("Error sending email:", error);
+      return { status: false, message: "Failed to send email" };
+    }
+
+    return { status: true, message: "Message is sent" };
   } catch (e) {
-    console.log(e);
+    console.error("Exception sending email:", e);
+    return { status: false, message: "An unexpected error occurred" };
   }
-
-  // const { data, error } = await resend.emails.send({
-  //     from: 'onboarding@resend.dev',
-  //     to: 'hdrydeveloper@gmail.com',
-  //     subject: 'Hello world',
-  //     react: ContactFormEmail({ message: message }),
-  //   });
-
-  //   return {
-  //     data,
-  //   };
 };
