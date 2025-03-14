@@ -19,7 +19,7 @@ const experiences: Experience[] = [
     company: "KNIME",
     location: "BERLIN",
     position: "Frontend Developer",
-    period: "JAN 2024 - DEC 2024",
+    period: "JANUARY 2024 - DECEMBER 2024",
     color: "#f7a440",
     achievements: [
       "Led migration from Options API to Composition API and TypeScript, improving performance by 15%.",
@@ -42,7 +42,7 @@ const experiences: Experience[] = [
     company: "Programmers House",
     location: "Tehran",
     position: "Frontend Developer",
-    period: "April 2020 - Feb 2022",
+    period: "APRIL 2020 - AUGUST 2022",
     color: "#5ba374",
     achievements: [
       "Applied rigorous Clean Coding standards and Test-Driven Development practices, cutting bug reports by 17% and decreasing customer-reported issues by 20% within the first quarter of implementation.",
