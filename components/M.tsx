@@ -3,7 +3,7 @@ import VerticalSlider from "./Carousel";
 import SkillsTabs from "./Skills";
 import Image from "next/image";
 import NavBar from "./Nav";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaBuilding } from "react-icons/fa";
 import image from "../public/shayan5.png";
 import Link from "next/link";
 
@@ -54,7 +54,9 @@ export default function Main() {
                   digital experiences with clean, efficient code.
                 </p>
 
+                {/* Current Work & Experience Cards */}
                 <div className="flex flex-col sm:flex-row sm:items-center gap-6 pt-4">
+                  {/* Experience Card */}
                   <div className="flex items-center gap-4 bg-white dark:bg-gray-800 p-4 rounded-xl shadow-lg w-fit">
                     <div className="flex items-center justify-center w-16 h-16 rounded-full bg-green-100 dark:bg-green-900">
                       <span className="text-3xl font-bold text-green-600 dark:text-green-400">
@@ -68,20 +70,38 @@ export default function Main() {
                     </div>
                   </div>
 
-                  <div className="flex gap-4 items-center">
-                    <Link
-                      href="https://github.com/gitsheyno"
-                      className="flex items-center justify-center w-12 h-12 rounded-full bg-white dark:bg-gray-800 shadow-lg text-xl hover:bg-blue-50 dark:hover:bg-gray-700 transition-all text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
-                    >
-                      <FaGithub />
-                    </Link>
-                    <Link
-                      href="https://de.linkedin.com/in/shayan-heidary"
-                      className="flex items-center justify-center w-12 h-12 rounded-full bg-white dark:bg-gray-800 shadow-lg text-xl hover:bg-blue-50 dark:hover:bg-gray-700 transition-all text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
-                    >
-                      <FaLinkedin />
-                    </Link>
+                  {/* Current Workplace Card */}
+                  <div className="flex items-center gap-4 bg-white dark:bg-gray-800 p-4 rounded-xl shadow-lg w-fit">
+                    <div className="flex items-center justify-center w-16 h-16 rounded-full bg-blue-100 dark:bg-blue-900">
+                      <FaBuilding className="text-2xl text-blue-600 dark:text-blue-400" />
+                    </div>
+                    <div className="text-sm">
+                      <div className="font-semibold text-gray-800 dark:text-white mb-1">
+                        Currently Working At
+                      </div>
+                      <div className="text-blue-600 dark:text-blue-400 font-medium">
+                        <Link href="https://pickshare.app/">
+                          Pickshare GmbH
+                        </Link>
+                      </div>
+                    </div>
                   </div>
+                </div>
+
+                {/* Social Links */}
+                <div className="flex gap-4 items-center">
+                  <Link
+                    href="https://github.com/gitsheyno"
+                    className="flex items-center justify-center w-12 h-12 rounded-full bg-white dark:bg-gray-800 shadow-lg text-xl hover:bg-blue-50 dark:hover:bg-gray-700 transition-all text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
+                  >
+                    <FaGithub />
+                  </Link>
+                  <Link
+                    href="https://de.linkedin.com/in/shayan-heidary"
+                    className="flex items-center justify-center w-12 h-12 rounded-full bg-white dark:bg-gray-800 shadow-lg text-xl hover:bg-blue-50 dark:hover:bg-gray-700 transition-all text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
+                  >
+                    <FaLinkedin />
+                  </Link>
                 </div>
 
                 {/* Call to Action */}
