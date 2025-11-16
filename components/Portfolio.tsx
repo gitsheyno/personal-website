@@ -5,6 +5,7 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { ExternalLink, Github, Globe, Smartphone } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 interface PortfolioItem {
   id: string;
@@ -66,10 +67,7 @@ const portfolioData: PortfolioItem[] = [
       'NextJS',
       'TailwindCSS',
     ],
-    link: [
-      'https://festivals-nine.vercel.app',
-      'https://github.com/gitsheyno/code-challenge',
-    ],
+    link: ['https://lastmile-os.com/'],
     category: 'web-app',
   },
   {
@@ -81,10 +79,7 @@ const portfolioData: PortfolioItem[] = [
     },
     img: '/driver.png',
     technologies: ['React-Native', 'NodeJS', 'TS', 'Redux-Toolkit'],
-    link: [
-      'https://german-dictionary-llm.vercel.app/',
-      'https://github.com/gitsheyno/German-dictionary-llm',
-    ],
+    link: ['https://pickshare.app/'],
     category: 'mobile-app',
   },
 
@@ -97,7 +92,7 @@ const portfolioData: PortfolioItem[] = [
     },
     img: '/gym.png',
     technologies: ['NextJS', 'PostgreSQL', 'Typescript', 'TailwindCSS'],
-    link: ['https://apps.apple.com/app', 'https://github.com/example/mealmate'],
+    link: ['https://coach-ai-khaki.vercel.app/'],
     category: 'web-app',
   },
 ];
@@ -117,7 +112,7 @@ export default function PortfolioSection() {
       : portfolioData.filter((item) => item.category === activeCategory);
 
   return (
-    <section className="w-full py-20 px-4 md:px-6 lg:px-8">
+    <section className="w-full py-20 px-4 md:px-6 lg:px-8" id="works">
       <div className="max-w-6xl mx-auto space-y-10">
         <div className="text-center space-y-3">
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white">
@@ -168,7 +163,6 @@ export default function PortfolioSection() {
                     className="object-cover group-hover:scale-105 transition-transform duration-300"
                     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   />
-                  {/* Overlay gradient for better text readability */}
                   <div className="absolute inset-0 bg-gradient-to-t from-blue-950/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
 
@@ -210,31 +204,40 @@ export default function PortfolioSection() {
                         className="h-8 text-xs flex-1 bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-400 hover:to-blue-400"
                         asChild
                       >
-                        <a
+                        <Link
                           href={project.link[0]}
                           target="_blank"
                           rel="noopener noreferrer"
                         >
                           <ExternalLink className="w-3 h-3 mr-1" />
                           Demo
-                        </a>
+                        </Link>
                       </Button>
                     )}
-                    {project.link[1] && (
+                    {project.link[1] ? (
                       <Button
                         variant="outline"
                         size="sm"
                         className="h-8 text-xs flex-1 bg-blue-500/10 text-blue-100 border-blue-400/30 hover:bg-blue-500/20 hover:border-blue-400/50"
                         asChild
                       >
-                        <a
+                        <Link
                           href={project.link[1]}
                           target="_blank"
                           rel="noopener noreferrer"
                         >
                           <Github className="w-3 h-3 mr-1" />
                           Code
-                        </a>
+                        </Link>
+                      </Button>
+                    ) : (
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        disabled
+                        className="h-8 text-xs flex-1 bg-blue-500/10 text-blue-200 border-blue-400/20 cursor-not-allowed opacity-50"
+                      >
+                        Private Repo
                       </Button>
                     )}
                   </div>

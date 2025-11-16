@@ -6,7 +6,7 @@ import Link from 'next/link';
 import MobileMenu from './MobileMenu';
 
 const navigationItems = [
-  { label: 'Services', href: '#services' },
+  { label: 'Services', href: '#skills' },
   { label: 'Experiences', href: '#experiences' },
   { label: 'Works', href: '#works' },
   { label: 'Contacts', href: '#contacts' },

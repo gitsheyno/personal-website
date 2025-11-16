@@ -27,7 +27,7 @@ const experiences: Experience[] = [
   {
     id: 'pickshare',
     company: 'Pickshare GmbH',
-    location: 'Germany',
+    location: 'Dortmund',
     position: 'Frontend Engineer',
     period: 'SEPTEMBER 2025 - PRESENT',
     color: '#4fa6ff',
@@ -58,22 +58,25 @@ const experiences: Experience[] = [
     company: 'KNIME',
     location: 'BERLIN',
     position: 'Frontend Developer',
-    period: 'JANUARY 2024 - DECEMBER 2024',
+    period: 'JANUARY 2024 - FEBRUARY 2025',
     color: '#f7a440',
     achievements: [
-      'Led migration from Options API to Composition API and TypeScript, improving performance by 15%.',
-      'Migrated all KNIME packages to a monorepo ecosystem in collaboration with frontend developers, resulting in a 25% performance boost.',
-      'Introduced and maintained 5 reusable components using VueJS and Typescript deployed across all projects to enhance development.',
-      'Implemented rigorous testing protocols using Jest for components, attaining 98% code coverage and ensuring system reliability, which led to a 35% decrease in critical bugs.',
-      'Restructured 4 KNIME widgets, adding search functionality, abstraction, TypeScript and built a multi-file upload widget from scratch, shared across open-source and business hub platforms, leading to 10% improved system performance and 20% increased data accuracy.',
-      'Established a suite of utility functions to eliminate code duplication and enhance component abstraction, achieving an 8% reduction in redundant code and significantly improving maintainability.',
+      'Led migration from Vue2 to Vue3 and TypeScript, improving application performance by 15% and modernizing the overall frontend architecture.',
+      'Collaborated closely with a cross-functional Scrum team—including Product Owners, Designers, and Backend Engineers—to deliver iterative improvements, ensure seamless user experiences, and actively contributed through retrospective meetings and Pair Programming sessions.',
+      'Implemented rigorous automated testing with 98% Jest coverage integrated into CI/CD pipelines, reducing critical bugs by 35% and significantly increasing deployment confidence.',
+      'Led technical development of 4 KNIME Analytics Platform widgets using Vue3, NuxtJS, TypeScript, SCSS, and Java Spring Framework (Desktop/Eclipse), enhancing search functionality, optimizing performance, and improving the design system.',
+      'Designed, implemented, and maintained a multi-file upload widget with drag-and-drop support, built from scratch and translated from Figma into a pixel-perfect Vue3 + Pinia implementation, shared across open-source and SaaS platforms.',
+      'Integrated an LLM-powered chatbot with real-time text streaming to enhance in-app support, improving user guidance and overall product usability.',
     ],
     technologies: [
-      'Vue.js',
+      'Vue.JS',
+      'Nuxt.JS',
       'TypeScript',
       'Jest',
       'Monorepo',
+      'Java',
       'Component Design',
+      'LLM',
     ],
   },
   {
@@ -84,25 +87,21 @@ const experiences: Experience[] = [
     period: 'APRIL 2020 - AUGUST 2022',
     color: '#5ba374',
     achievements: [
-      'Applied rigorous Clean Coding standards and Test-Driven Development practices, cutting bug reports by 17% and decreasing customer-reported issues by 20% within the first quarter of implementation.',
-      'Developed 4 websites using Next.js, leveraging its server-side rendering capabilities.',
-      'Boosted mobile user engagement by 35% by ensuring mobile responsiveness of web applications.',
-      'Maintained 100% code integrity across multiple projects by managing source code versioning with Git.',
-      'Engineered React Router migration to v6+, Achieved a 15% reduction in bundle size and resolved path-matching issues, improving overall application performance.',
-      'Leveraged workflow automation and build processes with Gulp, Webpack, and GitHub Actions to streamline development and enhance efficiency.',
-      'Utilized GraphQL to optimize resulted in boosting overall web applications performance by 10%.',
-      'Developed RESTful API integration within React.js Library and Typescript and NextJS to facilitate seamless data exchange collaborating with backend Team.',
-      'Led successful migration of state management, Transitioned from Redux toolkit to Tanstack Query, resulting in a 12% increase in code maintainability and readability.',
-      'Collaborated seamlessly alongside cross-functional teams including back-end engineers and design professionals.',
+      'Owned the full lifecycle of multiple user-centric, mobile-first web applications, including SPAs and SSR/CSR platforms built with ReactJS and NextJS, with a strong focus on accessibility, performance, and scalable architecture.',
+      'Applied Clean Coding principles and Test-Driven Development practices, reducing bug reports by 17% and decreasing customer-reported issues by 20% within the first quarter.',
+      'Implemented automated testing pipelines using Playwright and Jest for both unit and end-to-end coverage, fully integrated into CI/CD workflows to ensure reliable deployments and maintain high code quality.',
+      'Owned technical decisions for reusable, scalable UI components using ReactJS, TypeScript, TailwindCSS, and Framer Motion, applying state-management best practices and design patterns such as Compound Components with a strong focus on UI/UX.',
+      'Designed and integrated multiple API paradigms including REST, GraphQL, and tRPC using ReactJS and NodeJS, enabling efficient, end-to-end client–server communication and improving data flow consistency across applications.',
     ],
     technologies: [
       'React.js',
       'Next.js',
       'TypeScript',
-      'GraphQL',
-      'TanStack Query',
+      'REST APIs',
+      'State-Management',
       'Git',
-      'Webpack',
+      'Vitest',
+      'Docker',
     ],
   },
 ];
@@ -115,7 +114,7 @@ export default function ExperienceSection() {
   };
 
   return (
-    <section className="w-full py-20 px-4">
+    <section className="w-full py-20 px-4" id="experiences">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16 space-y-4">
           <Badge

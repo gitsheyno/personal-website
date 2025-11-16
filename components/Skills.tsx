@@ -138,7 +138,7 @@ export default function SkillsSection() {
 
   return (
     <section>
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto" id="skills">
         {/* Header */}
         <div className="text-center mb-16 space-y-4">
           <Badge

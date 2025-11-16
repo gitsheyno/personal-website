@@ -18,7 +18,7 @@ export default function HomePage() {
         <SkillsSection />
       </section>
 
-      <section>
+      <section id="experiences">
         <ExperienceSection />
       </section>
 
