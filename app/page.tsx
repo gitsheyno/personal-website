@@ -1,15 +1,34 @@
-import LandingPage from "../components/LandingPage";
-import "../app/globals.css";
-import Portfolio from "../components/Portfolio";
-import Contact from "../components/Contact";
-import M from "@/components/M";
-export default function Home() {
+import NavBar from '@/components/Nav';
+import HeroSection from '@/components/HeroSection';
+import SkillsSection from '@/components/Skills';
+import PortfolioSection from '@/components/Portfolio';
+import Contact from '@/components/Contact';
+import ExperienceSection from '@/components/LandingPage';
+
+export default function HomePage() {
   return (
-    <div>
-      <M />
-      <LandingPage />
-      <Portfolio />
-      <Contact />
+    <div className="container mx-auto px-6 space-y-24">
+      <NavBar />
+
+      <section id="hero">
+        <HeroSection />
+      </section>
+
+      <section id="skills">
+        <SkillsSection />
+      </section>
+
+      <section>
+        <ExperienceSection />
+      </section>
+
+      <section id="portfolio">
+        <PortfolioSection />
+      </section>
+
+      <section id="contact">
+        <Contact />
+      </section>
     </div>
   );
 }

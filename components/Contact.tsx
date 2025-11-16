@@ -1,13 +1,13 @@
-"use client";
-import ContactDetails from "./ContactDetails";
-import ContactForm from "./ContactForm";
+'use client';
+import ContactDetails from './ContactDetails';
+import ContactForm from './ContactForm';
 
 const ContactSection = () => (
-  <section id="contacts" className="py-20 bg-gray-50 dark:bg-gray-900">
+  <section id="contacts" className="py-20">
     <div className="container mx-auto px-6">
       <div className="max-w-6xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden">
-          <div className="relative p-8 md:p-12 bg-gradient-to-br from-indigo-700 to-purple-800 text-white">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 bg-blue-500/10 backdrop-blur-sm border-2 border-blue-400/30 rounded-2xl shadow-xl shadow-blue-900/20 overflow-hidden">
+          <div className="relative p-8 md:p-12 bg-gradient-to-br from-blue-600 to-cyan-600 text-white">
             <div className="absolute top-0 left-0 w-full h-full opacity-10">
               <svg
                 width="100%"
@@ -33,10 +33,8 @@ const ContactSection = () => (
                 <rect width="100%" height="100%" fill="url(#grid)" />
               </svg>
             </div>
-
             <div className="relative z-10">
               <ContactDetails />
-
               <div className="hidden md:block absolute bottom-6 right-6">
                 <svg
                   className="w-32 h-32 text-white/10"
@@ -48,9 +46,8 @@ const ContactSection = () => (
               </div>
             </div>
           </div>
-
           <div className="p-8 md:p-12">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-800 dark:text-white mb-8">
+            <h2 className="text-2xl md:text-3xl font-bold text-white mb-8">
               I&apos;d love to hear from you! Let&apos;s get in touch.
             </h2>
             <ContactForm />

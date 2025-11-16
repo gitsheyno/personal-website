@@ -2,14 +2,12 @@ const ContactDetails = () => (
   <div className="space-y-6">
     <div>
       <h2 className="text-3xl font-bold text-white mb-2">Contact Me</h2>
-      <div className="w-20 h-1.5 bg-yellow-300 rounded-full"></div>
+      <div className="w-20 h-1.5 bg-cyan-300 rounded-full"></div>
     </div>
-
-    <p className="text-lg text-white max-w-md">
+    <p className="text-lg text-blue-50/90 max-w-md">
       Not sure what you need? I&apos;d be happy to listen and suggest ideas you
       hadn&apos;t considered.
     </p>
-
     <div className="space-y-4 pt-2">
       <div className="flex items-center gap-4">
         <div className="flex items-center justify-center w-12 h-12 rounded-full bg-white/20 text-white">
@@ -29,11 +27,10 @@ const ContactDetails = () => (
           </svg>
         </div>
         <div>
-          <p className="text-sm font-medium text-yellow-200">Email</p>
+          <p className="text-sm font-medium text-cyan-200">Email</p>
           <p className="text-white font-medium">hdrydeveloper@gmail.com</p>
         </div>
       </div>
-
       <div className="flex items-center gap-4">
         <div className="flex items-center justify-center w-12 h-12 rounded-full bg-white/20 text-white">
           <svg
@@ -52,11 +49,12 @@ const ContactDetails = () => (
           </svg>
         </div>
         <div>
-          <p className="text-sm font-medium text-yellow-200">Phone</p>
+          <p className="text-sm font-medium text-cyan-200">Phone</p>
           <p className="text-white font-medium">(+49) 17621701815</p>
         </div>
       </div>
     </div>
   </div>
 );
+
 export default ContactDetails;
