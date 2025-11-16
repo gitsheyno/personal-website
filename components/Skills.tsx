@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
@@ -78,7 +78,7 @@ const skillsData: SkillCategory[] = [
       { name: 'LangChain', level: 70, category: 'ai' },
       { name: 'Vercel AI SDK', level: 70, category: 'ai' },
       {
-        name: 'Vector Databases (Pinecone / Redis / pgvector)',
+        name: 'Vector Databases',
         level: 70,
         category: 'ai',
       },
@@ -128,13 +128,6 @@ const skillsData: SkillCategory[] = [
 
 export default function SkillsSection() {
   const [activeTab, setActiveTab] = useState('frontend');
-  const [loaded, setLoaded] = useState(false);
-
-  useEffect(() => {
-    setLoaded(false);
-    const timer = setTimeout(() => setLoaded(true), 100);
-    return () => clearTimeout(timer);
-  }, [activeTab]);
 
   return (
     <section>
@@ -207,58 +200,28 @@ export default function SkillsSection() {
                     </div>
                   </div>
 
-                  {/* Skills list */}
-                  <div className="grid gap-6">
+                  {/* Skills grid - Beautiful list layout */}
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                     {category.skills.map((skill, index) => (
                       <div
                         key={skill.name}
+                        className="group"
                         style={{
                           animation: `fadeInUp 0.5s ease-out ${
-                            index * 0.1
+                            index * 0.05
                           }s both`,
                         }}
                       >
-                        <div className="flex items-center justify-between mb-3">
-                          <div className="flex items-center gap-3">
-                            <CheckCircle2
-                              className={`w-5 h-5 text-transparent bg-clip-text bg-gradient-to-r ${category.color}`}
-                            />
-                            <span className="font-medium text-sm md:text-base text-blue-100">
-                              {skill.name}
-                            </span>
-                          </div>
-                          <span className="text-sm font-semibold text-blue-200/70">
-                            {skill.level}%
-                          </span>
-                        </div>
-
-                        <div className="relative h-3 bg-blue-900/30 rounded-full overflow-hidden">
+                        <div className="flex items-center gap-3 p-4 rounded-lg bg-blue-500/10 border border-blue-400/20 hover:border-blue-400/40 hover:bg-blue-500/20 transition-all duration-300">
                           <div
-                            className={`absolute top-0 left-0 h-full bg-gradient-to-r ${category.color} rounded-full transition-all duration-1000 ease-out shadow-lg`}
-                            style={{
-                              width: loaded ? `${skill.level}%` : '0%',
-                            }}
-                          >
-                            <div className="absolute inset-0 bg-white/20 animate-pulse" />
-                          </div>
+                            className={`flex-shrink-0 w-2 h-2 rounded-full bg-gradient-to-r ${category.color}`}
+                          />
+                          <span className="font-medium text-sm text-blue-100 group-hover:text-cyan-300 transition-colors">
+                            {skill.name}
+                          </span>
                         </div>
                       </div>
                     ))}
-                  </div>
-
-                  {/* Skill badges */}
-                  <div className="mt-8 pt-6 border-t border-blue-400/30">
-                    <div className="flex flex-wrap gap-2">
-                      {category.skills.map((skill) => (
-                        <Badge
-                          key={skill.name}
-                          variant="outline"
-                          className="cursor-default bg-blue-500/10 text-blue-100 border-blue-400/30 hover:bg-blue-500/20"
-                        >
-                          {skill.name}
-                        </Badge>
-                      ))}
-                    </div>
                   </div>
                 </CardContent>
               </Card>
