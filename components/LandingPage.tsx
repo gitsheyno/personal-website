@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import Image from 'next/image';
 import {
   Briefcase,
   MapPin,
@@ -14,6 +15,7 @@ import {
 
 interface Experience {
   id: string;
+  img?: string;
   company: string;
   location: string;
   position: string;
@@ -26,6 +28,7 @@ interface Experience {
 const experiences: Experience[] = [
   {
     id: 'pickshare',
+    img: '/pickshare.jpeg',
     company: 'Pickshare GmbH',
     location: 'Dortmund',
     position: 'Frontend Engineer',
@@ -55,6 +58,7 @@ const experiences: Experience[] = [
   },
   {
     id: 'knime',
+    img: '/knime-logo.png',
     company: 'KNIME',
     location: 'BERLIN',
     position: 'Frontend Developer',
@@ -171,7 +175,17 @@ export default function ExperienceSection() {
                                 className="w-12 h-12 rounded-lg flex items-center justify-center text-white font-bold text-lg shadow-lg"
                                 style={{ backgroundColor: experience.color }}
                               >
-                                {experience.company.charAt(0)}
+                                {experience.img ? (
+                                  <Image
+                                    src={experience.img}
+                                    width={100}
+                                    height={100}
+                                    alt="logo"
+                                    className="rounded-lg object-cover"
+                                  />
+                                ) : (
+                                  <span>{experience.company.charAt(0)}</span>
+                                )}
                               </div>
                               <div>
                                 <h3 className="text-xl md:text-2xl font-bold text-white group-hover:text-cyan-300 transition-colors">

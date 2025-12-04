@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Github, Linkedin, Mail, ArrowRight, Sparkles } from 'lucide-react';
+import Link from 'next/link';
 
 interface HeroConfig {
   greeting: string;
@@ -171,13 +172,24 @@ export default function HeroSection() {
                   )}
                 </div>
 
-                <Button
-                  size="lg"
-                  className="group h-12 bg-gradient-to-r from-cyan-500 to-blue-500 px-8 text-base font-semibold shadow-lg transition-all hover:scale-105 hover:shadow-xl hover:from-cyan-400 hover:to-blue-400"
+                <Link
+                  href={'#experiences'}
+                  className="
+                      group
+                      flex items-center justify-center
+                      h-12 px-8
+                      bg-gradient-to-r from-cyan-500 to-blue-500
+                      text-base font-semibold
+                      shadow-lg
+                      transition-all
+                      hover:scale-105 hover:shadow-xl
+                      hover:from-cyan-400 hover:to-blue-400
+                      rounded-md
+                    "
                 >
                   View My Work
                   <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-                </Button>
+                </Link>
               </div>
 
               <div className="mt-20">
