@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
-import { Button } from '@/components/ui/button';
-import { Github, Linkedin, Mail, ArrowRight, Sparkles } from 'lucide-react';
-import Link from 'next/link';
+import { useState, useEffect } from "react";
+import { Button } from "@/components/ui/button";
+import { Github, Linkedin, Mail, ArrowRight, Sparkles } from "lucide-react";
+import Link from "next/link";
 
 interface HeroConfig {
   greeting: string;
@@ -22,19 +22,19 @@ interface HeroConfig {
 }
 
 const heroConfig: HeroConfig = {
-  greeting: 'Welcome to my portfolio',
-  name: 'Shayan',
-  nameGradient: 'from-blue-600 to-purple-600',
-  roles: ['Frontend Engineer', 'FullStack Developer', 'Problem Solver'],
+  greeting: "Welcome to my portfolio",
+  name: "Shayan",
+  nameGradient: "from-blue-600 to-purple-600",
+  roles: ["Frontend Engineer", "FullStack Developer", "Problem Solver"],
   description:
-    'A seasoned developer with expertise in both frontend and backend technologies. I craft responsive, user-centered digital experiences with clean, efficient code.',
-  yearsExperience: '3.5',
-  currentCompany: 'Pickshare GmbH',
-  currentCompanyUrl: 'https://pickshare.app/',
+    "A seasoned developer with expertise in both frontend and backend technologies. I craft responsive, user-centered digital experiences with clean, efficient code.",
+  yearsExperience: "4",
+  currentCompany: "Pickshare GmbH",
+  currentCompanyUrl: "https://pickshare.app/",
   socialLinks: {
-    github: 'https://github.com/gitsheyno',
-    linkedin: 'https://de.linkedin.com/in/shayan-heidary',
-    email: 'mailto:your-email@example.com',
+    github: "https://github.com/gitsheyno",
+    linkedin: "https://de.linkedin.com/in/shayan-heidary",
+    email: "mailto:your-email@example.com",
   },
 };
 
@@ -60,8 +60,8 @@ export default function HeroSection() {
             <div
               className={`max-w-5xl text-center transition-all duration-1000 ${
                 isVisible
-                  ? 'translate-y-0 opacity-100'
-                  : 'translate-y-10 opacity-0'
+                  ? "translate-y-0 opacity-100"
+                  : "translate-y-10 opacity-0"
               }`}
             >
               <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-blue-400/30 bg-blue-500/10 px-4 py-2 backdrop-blur-sm">
@@ -85,10 +85,10 @@ export default function HeroSection() {
                       key={role}
                       className={`absolute left-1/2 -translate-x-1/2 transition-all duration-500 ${
                         index === currentRoleIndex
-                          ? 'translate-y-0 opacity-100'
+                          ? "translate-y-0 opacity-100"
                           : index < currentRoleIndex
-                          ? '-translate-y-8 opacity-0'
-                          : 'translate-y-8 opacity-0'
+                          ? "-translate-y-8 opacity-0"
+                          : "translate-y-8 opacity-0"
                       }`}
                     >
                       {role}
@@ -173,7 +173,7 @@ export default function HeroSection() {
                 </div>
 
                 <Link
-                  href={'#experiences'}
+                  href={"#experiences"}
                   className="
                       group
                       flex items-center justify-center
