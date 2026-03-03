@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
-import { ExternalLink, Github, Globe, Smartphone } from 'lucide-react';
-import Image from 'next/image';
-import Link from 'next/link';
+import { useState } from "react";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { ExternalLink, Github, Globe, Smartphone } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
 
 interface PortfolioItem {
   id: string;
@@ -17,97 +17,100 @@ interface PortfolioItem {
   };
   technologies: string[];
   link: string[];
-  category: 'web-app' | 'mobile-app' | 'package' | 'service';
+  category: "web-app" | "mobile-app" | "package" | "service";
 }
 
 const portfolioData: PortfolioItem[] = [
   {
-    id: 'knime',
-    color: 'from-blue-500 to-cyan-500',
+    id: "knime",
+    color: "from-blue-500 to-cyan-500",
     description: {
-      name: 'KNIME',
-      title: 'Open-source analytics platform',
+      name: "KNIME",
+      title: "Open-source analytics platform",
     },
-    img: '/knime.png',
-    technologies: ['VueJS', 'Nuxt3', 'TS', 'SCSS'],
+    img: "/knime.png",
+    technologies: ["VueJS", "Nuxt3", "TS", "SCSS"],
     link: [
-      'https://www.knime.com/downloads',
-      'https://github.com/orgs/knime/repositories',
+      "https://www.knime.com/downloads",
+      "https://github.com/orgs/knime/repositories",
     ],
-    category: 'web-app',
+    category: "web-app",
   },
   {
-    id: 'low-carb',
-    color: 'from-green-500 to-emerald-500',
+    id: "low-carb",
+    color: "from-green-500 to-emerald-500",
     description: {
-      name: 'Low-Carb Recipes',
-      title: 'Light, guilt-free recipes',
+      name: "Low-Carb Recipes",
+      title: "Light, guilt-free recipes",
     },
-    img: '/image.png',
-    technologies: ['React', 'NodeJS', 'TailwindCSS', 'SQLITE'],
+    img: "/image.png",
+    technologies: ["React", "NodeJS", "TailwindCSS", "SQLITE"],
     link: [
-      'https://low-carb-diet-tan.vercel.app/',
-      'https://github.com/gitsheyno/low-carb-diet',
+      "https://low-carb-diet-tan.vercel.app/",
+      "https://github.com/gitsheyno/low-carb-diet",
     ],
-    category: 'web-app',
+    category: "web-app",
   },
   {
-    id: 'LMOS',
-    color: 'from-orange-500 to-red-500',
+    id: "LMOS",
+    color: "from-orange-500 to-red-500",
     description: {
-      name: 'last-mile-os',
-      title: 'Organize your events effortlessly',
+      name: "last-mile-os",
+      title: "Organize your events effortlessly",
     },
-    img: '/lmos.png',
+    img: "/lmos.png",
     technologies: [
-      'ReactJS',
-      'TS',
-      'NodeJS',
-      'Docker',
-      'NextJS',
-      'TailwindCSS',
+      "ReactJS",
+      "TS",
+      "NodeJS",
+      "Docker",
+      "NextJS",
+      "TailwindCSS",
     ],
-    link: ['https://lastmile-os.com/'],
-    category: 'web-app',
+    link: ["https://lastmile-os.com/"],
+    category: "web-app",
   },
   {
-    id: 'DriverBuddy',
-    color: 'from-indigo-500 to-blue-500',
+    id: "DriverBuddy",
+    color: "from-indigo-500 to-blue-500",
     description: {
-      name: 'DriverBuddy',
-      title: 'City-Logistic',
+      name: "DriverBuddy",
+      title: "City-Logistic",
     },
-    img: '/driver.png',
-    technologies: ['React-Native', 'NodeJS', 'TS', 'Redux-Toolkit'],
-    link: ['https://pickshare.app/'],
-    category: 'mobile-app',
+    img: "/driver.png",
+    technologies: ["React-Native", "NodeJS", "TS", "Redux-Toolkit"],
+    link: ["https://pickshare.app/"],
+    category: "mobile-app",
   },
 
   {
-    id: 'FitMentor-AI',
-    color: 'from-lime-500 to-green-500',
+    id: "FitMentor-AI",
+    color: "from-lime-500 to-green-500",
     description: {
-      name: 'FitMentor AI',
-      title: 'AI assistence as a Fitness Coach',
+      name: "FitMentor AI",
+      title: "AI assistence as a Fitness Coach",
     },
-    img: '/gym.png',
-    technologies: ['NextJS', 'PostgreSQL', 'Typescript', 'TailwindCSS'],
-    link: ['https://coach-ai-khaki.vercel.app/'],
-    category: 'web-app',
+    img: "/gym.png",
+    technologies: ["NextJS", "PostgreSQL", "Typescript", "TailwindCSS"],
+    link: [
+      "https://coach-ai-khaki.vercel.app/",
+      "https://github.com/gitsheyno/coach-ai",
+    ],
+    category: "web-app",
   },
 ];
 
 const categories = [
-  { id: 'all', label: 'All Projects', icon: Globe },
-  { id: 'web-app', label: 'Web Apps', icon: Globe },
-  { id: 'mobile-app', label: 'Mobile Apps', icon: Smartphone },
+  { id: "all", label: "All Projects", icon: Globe },
+  { id: "web-app", label: "Web Apps", icon: Globe },
+  { id: "mobile-app", label: "Mobile Apps", icon: Smartphone },
 ] as const;
 
 export default function PortfolioSection() {
-  const [activeCategory, setActiveCategory] = useState<string>('all');
+  const [activeCategory, setActiveCategory] = useState<string>("all");
 
   const filteredProjects =
-    activeCategory === 'all'
+    activeCategory === "all"
       ? portfolioData
       : portfolioData.filter((item) => item.category === activeCategory);
 
@@ -129,13 +132,13 @@ export default function PortfolioSection() {
             return (
               <Button
                 key={category.id}
-                variant={activeCategory === category.id ? 'default' : 'ghost'}
+                variant={activeCategory === category.id ? "default" : "ghost"}
                 onClick={() => setActiveCategory(category.id)}
                 size="sm"
                 className={`transition-all duration-300 ${
                   activeCategory === category.id
-                    ? 'bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-400 hover:to-blue-400'
-                    : 'text-blue-100 hover:bg-blue-500/20 hover:text-blue-50'
+                    ? "bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-400 hover:to-blue-400"
+                    : "text-blue-100 hover:bg-blue-500/20 hover:text-blue-50"
                 }`}
               >
                 <Icon className="w-4 h-4 mr-1.5" />
