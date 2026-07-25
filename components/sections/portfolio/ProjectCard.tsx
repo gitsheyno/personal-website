@@ -68,6 +68,10 @@ export function ProjectCard({ project }: ProjectCardProps) {
                 >
                   <ExternalLink className="mr-1 h-3 w-3" />
                   Demo
+                  <span className="sr-only">
+                    {" "}
+                    of {project.description.name}
+                  </span>
                 </Link>
               </Button>
             )}
@@ -85,6 +89,10 @@ export function ProjectCard({ project }: ProjectCardProps) {
                 >
                   <Github className="mr-1 h-3 w-3" />
                   Code
+                  <span className="sr-only">
+                    {" "}
+                    for {project.description.name}
+                  </span>
                 </Link>
               </Button>
             ) : (

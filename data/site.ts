@@ -19,7 +19,7 @@ export const contactDetails: ContactDetailsContent = {
 
 export const heroContent: HeroContent = {
   greeting: "Welcome to my portfolio",
-  name: "Shayan",
+  name: "Shayan Heidary",
   roles: ["Frontend Engineer", "FullStack Developer", "Problem Solver"],
   description:
     "A seasoned developer with expertise in both frontend and backend technologies. I craft responsive, user-centered digital experiences with clean, efficient code.",
