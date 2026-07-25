@@ -2,6 +2,32 @@ import type { Experience } from "@/types";
 
 export const experiences: Experience[] = [
   {
+    id: "druckhaus",
+    img: "/druckhaus-logo.png",
+    imageFit: "contain",
+    company: "Druckhaus GmbH",
+    location: "Bochum, Germany",
+    position: "Frontend Engineer (Hybrid)",
+    period: "FEBRUARY 2026 - PRESENT",
+    color: "#009fce",
+    achievements: [
+      "Built secure account lifecycle and admin-review workflows with React, Next.js, Express, MongoDB, and fully typed TypeScript, strengthening access control, reducing invalid user actions, and improving reliability of account-state management across the platform.",
+      "Developed configurable pricing and order recalculation logic with Next.js, React, MongoDB, and TypeScript, improving pricing accuracy, reducing manual update effort, and ensuring consistent order totals, service fees, and invoice generation.",
+      "Unified responsive transactional email templates and implemented Mustache-based dynamic data injection, improving personalization, layout consistency, cross-device compatibility, and maintainability of user-facing communication.",
+      "Improved product launch readiness and conversion-focused React and Next.js landing pages by optimizing Core Web Vitals, adding cookie-based functionality, testing critical user flows, and extracting reusable design-system components, reducing regression risk and increasing UI consistency across products.",
+    ],
+    technologies: [
+      "React",
+      "Next.js",
+      "Express",
+      "MongoDB",
+      "TypeScript",
+      "Mustache",
+      "Core Web Vitals",
+      "Design Systems",
+    ],
+  },
+  {
     id: "pickshare",
     img: "/pickshare.jpeg",
     company: "Pickshare GmbH",

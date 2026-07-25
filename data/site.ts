@@ -5,8 +5,8 @@ import type {
 } from "@/types";
 
 export const navigationItems: NavigationItem[] = [
-  { label: "Services", href: "#skills" },
   { label: "Experiences", href: "#experiences" },
+  { label: "Services", href: "#skills" },
   { label: "Works", href: "#works" },
   { label: "Contacts", href: "#contacts" },
 ];
