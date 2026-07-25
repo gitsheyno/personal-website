@@ -19,7 +19,7 @@ export const sendEmail = async (
       subject: `Email address : ${senderEmail} and email from ${fullName}`,
       text: message,
     });
-    const { data, error } = response;
+    const { error } = response;
 
     if (error) {
       console.error("Error sending email:", error);
