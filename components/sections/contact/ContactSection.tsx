@@ -5,20 +5,19 @@ import { contactDetails } from "@/data/site";
 
 export function ContactSection() {
   return (
-    <PageSection id="contacts" contentClassName="max-w-6xl">
-      <div className="grid grid-cols-1 gap-12 overflow-hidden rounded-2xl border-2 border-blue-400/30 bg-blue-500/10 shadow-xl shadow-blue-900/20 backdrop-blur-sm lg:grid-cols-2">
-        <div className="relative overflow-hidden bg-gradient-to-br from-blue-600 to-cyan-600 p-8 text-white md:p-12">
-          <div
-            className="absolute inset-0 opacity-10 [background-image:linear-gradient(rgba(255,255,255,.7)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.7)_1px,transparent_1px)] [background-size:32px_32px]"
-            aria-hidden="true"
-          />
-          <div className="relative z-10">
+    <PageSection id="contacts">
+      <div className="grid grid-cols-1 border border-white/10 bg-[#101013] lg:grid-cols-[0.85fr_1.15fr]">
+        <div className="relative border-b border-white/10 p-8 text-white md:p-12 lg:border-r lg:border-b-0">
+          <div className="relative">
             <ContactDetails details={contactDetails} />
           </div>
         </div>
-        <div className="p-8 md:p-12">
-          <h2 className="mb-8 text-2xl font-bold text-white md:text-3xl">
-            I&apos;d love to hear from you! Let&apos;s get in touch.
+        <div className="p-8 md:p-12 lg:p-14">
+          <p className="mb-3 text-xs font-semibold tracking-[0.16em] text-cyan-300 uppercase">
+            Start a conversation
+          </p>
+          <h2 className="mb-10 max-w-xl text-2xl font-semibold tracking-[-0.03em] text-white md:text-3xl">
+            Have a product challenge or an interesting idea? Let&apos;s talk.
           </h2>
           <ContactForm />
         </div>

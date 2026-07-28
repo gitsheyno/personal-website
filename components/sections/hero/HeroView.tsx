@@ -1,4 +1,10 @@
-import { ArrowRight, Github, Linkedin, Mail, Sparkles } from "lucide-react";
+import {
+  ArrowDownRight,
+  ArrowUpRight,
+  Github,
+  Linkedin,
+  Mail,
+} from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import type { HeroContent } from "@/types";
@@ -11,29 +17,25 @@ interface HeroViewProps {
 export function HeroView({ content, currentRoleIndex }: HeroViewProps) {
   return (
     <section id="hero" className="relative scroll-mt-20">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex min-h-screen flex-col items-center justify-center pt-24 pb-20">
-          <div className="max-w-5xl translate-y-0 text-center opacity-100 transition-all duration-1000">
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-blue-400/30 bg-blue-500/10 px-4 py-2 backdrop-blur-sm">
-              <Sparkles className="h-4 w-4 text-blue-400" />
-              <span className="text-sm font-medium text-blue-100">
-                {content.greeting}
-              </span>
+      <div className="mx-auto flex min-h-screen w-full max-w-6xl flex-col justify-center px-5 pt-28 pb-16 md:px-8 md:pt-36">
+        <div className="grid items-end gap-16 lg:grid-cols-[minmax(0,1fr)_18rem]">
+          <div>
+            <div className="mb-10 flex items-center gap-3 text-xs font-semibold tracking-[0.18em] text-cyan-300 uppercase">
+              <span className="h-2 w-2 rounded-full bg-cyan-300" />
+              Available for thoughtful product work
             </div>
 
-            <h1 className="mb-6 text-5xl font-bold tracking-tight sm:text-6xl md:text-7xl lg:text-8xl">
-              <span className="text-white">Hi, I&apos;m </span>
-              <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
-                {content.name}
-              </span>
+            <p className="mb-4 text-sm text-zinc-500">{content.greeting}</p>
+            <h1 className="max-w-4xl text-5xl font-semibold tracking-[-0.055em] text-white sm:text-7xl lg:text-[6.5rem] lg:leading-[0.95]">
+              {content.name}
             </h1>
 
-            <div className="relative mb-8 h-12 sm:h-14 md:h-16">
-              <p className="text-2xl font-semibold text-blue-200 sm:text-3xl md:text-4xl">
+            <div className="relative mt-6 h-10 overflow-hidden sm:h-12">
+              <p className="text-xl font-medium tracking-[-0.025em] text-zinc-300 sm:text-3xl">
                 {content.roles.map((role, index) => (
                   <span
                     key={role}
-                    className={`absolute left-1/2 -translate-x-1/2 transition-all duration-500 ${
+                    className={`absolute left-0 transition-all duration-500 ${
                       index === currentRoleIndex
                         ? "translate-y-0 opacity-100"
                         : index < currentRoleIndex
@@ -47,41 +49,25 @@ export function HeroView({ content, currentRoleIndex }: HeroViewProps) {
               </p>
             </div>
 
-            <p className="mx-auto mb-12 max-w-2xl text-lg leading-relaxed text-blue-100/80 sm:text-xl">
+            <p className="mt-8 max-w-2xl text-base leading-8 text-zinc-400 sm:text-lg">
               {content.description}
             </p>
 
-            <div className="mb-12 flex flex-wrap items-center justify-center gap-6 text-sm sm:text-base">
-              <div className="flex items-center gap-2 rounded-lg border border-blue-400/30 bg-blue-500/20 px-4 py-2 shadow-sm backdrop-blur-sm">
-                <div className="h-2 w-2 animate-pulse rounded-full bg-green-400" />
-                <span className="font-medium text-blue-100">
-                  {content.yearsExperience}+ years experience
-                </span>
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="text-blue-200/70">Currently at</span>
-                <a
-                  href={content.currentCompanyUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group font-semibold text-cyan-400 transition-colors hover:text-cyan-300"
-                >
-                  {content.currentCompany}
-                  <span className="inline-block transition-transform group-hover:translate-x-1">
-                    →
-                  </span>
-                </a>
-              </div>
-            </div>
-
-            <div className="flex flex-col items-center gap-6 sm:flex-row sm:justify-center">
-              <div className="flex gap-3">
+            <div className="mt-10 flex flex-wrap items-center gap-3">
+              <Link
+                href="#experiences"
+                className="group inline-flex h-12 items-center justify-center bg-cyan-300 px-6 text-sm font-semibold text-zinc-950 transition-colors hover:bg-white"
+              >
+                Explore my work
+                <ArrowDownRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:translate-y-0.5" />
+              </Link>
+              <div className="flex items-center gap-1">
                 {content.socialLinks.github && (
                   <SocialButton
                     href={content.socialLinks.github}
                     label="View GitHub profile"
                   >
-                    <Github className="h-5 w-5 text-blue-100 transition-transform group-hover:rotate-12" />
+                    <Github className="h-4 w-4" />
                   </SocialButton>
                 )}
                 {content.socialLinks.linkedin && (
@@ -89,7 +75,7 @@ export function HeroView({ content, currentRoleIndex }: HeroViewProps) {
                     href={content.socialLinks.linkedin}
                     label="View LinkedIn profile"
                   >
-                    <Linkedin className="h-5 w-5 text-blue-100 transition-transform group-hover:rotate-12" />
+                    <Linkedin className="h-4 w-4" />
                   </SocialButton>
                 )}
                 {content.socialLinks.email && (
@@ -97,33 +83,48 @@ export function HeroView({ content, currentRoleIndex }: HeroViewProps) {
                     href={content.socialLinks.email}
                     label="Send an email"
                   >
-                    <Mail className="h-5 w-5 text-blue-100 transition-transform group-hover:rotate-12" />
+                    <Mail className="h-4 w-4" />
                   </SocialButton>
                 )}
               </div>
-
-              <Link
-                href="#experiences"
-                className="group flex h-12 items-center justify-center rounded-md bg-gradient-to-r from-cyan-500 to-blue-500 px-8 text-base font-semibold shadow-lg transition-all hover:scale-105 hover:from-cyan-400 hover:to-blue-400 hover:shadow-xl"
-              >
-                View My Work
-                <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-              </Link>
-            </div>
-
-            <div className="mt-20">
-              <div className="flex items-center justify-center gap-8 opacity-60">
-                <div className="h-px w-16 bg-gradient-to-r from-transparent to-blue-400/50" />
-                <p className="text-sm text-blue-200/70">Scroll to explore</p>
-                <div className="h-px w-16 bg-gradient-to-l from-transparent to-blue-400/50" />
-              </div>
-              <div className="mt-6 flex justify-center">
-                <div className="h-8 w-5 animate-bounce rounded-full border-2 border-blue-400/50">
-                  <div className="mx-auto mt-1 h-1.5 w-1.5 animate-pulse rounded-full bg-blue-300" />
-                </div>
-              </div>
             </div>
           </div>
+
+          <aside className="border-l border-white/15 pl-6 lg:mb-2">
+            <div className="space-y-8">
+              <div>
+                <p className="mb-2 text-xs tracking-[0.15em] text-zinc-500 uppercase">
+                  Experience
+                </p>
+                <p className="text-3xl font-semibold text-white">
+                  {content.yearsExperience}+
+                </p>
+                <p className="mt-1 text-sm text-zinc-400">
+                  years shipping products
+                </p>
+              </div>
+              <div>
+                <p className="mb-2 text-xs tracking-[0.15em] text-zinc-500 uppercase">
+                  Currently
+                </p>
+                <a
+                  href={content.currentCompanyUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group inline-flex items-center gap-2 text-sm font-semibold text-white hover:text-cyan-300"
+                >
+                  {content.currentCompany}
+                  <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                </a>
+              </div>
+              <div>
+                <p className="mb-2 text-xs tracking-[0.15em] text-zinc-500 uppercase">
+                  Based in
+                </p>
+                <p className="text-sm font-medium text-zinc-200">Germany</p>
+              </div>
+            </div>
+          </aside>
         </div>
       </div>
     </section>
@@ -143,9 +144,9 @@ function SocialButton({
 
   return (
     <Button
-      variant="outline"
-      size="lg"
-      className="group h-12 border-blue-400/30 bg-blue-500/10 backdrop-blur-sm transition-all hover:scale-105 hover:border-blue-400/50 hover:bg-blue-500/20"
+      variant="ghost"
+      size="icon"
+      className="h-12 w-12 rounded-none border border-white/15 text-zinc-300 transition-colors hover:border-white/30 hover:bg-white/5 hover:text-white"
       asChild
     >
       <a

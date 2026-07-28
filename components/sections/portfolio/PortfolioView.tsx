@@ -18,14 +18,14 @@ export function PortfolioView({
   onCategoryChange,
 }: PortfolioViewProps) {
   return (
-    <PageSection id="works" contentClassName="max-w-6xl">
+    <PageSection id="works">
       <SectionHeader
         compact
         title="Featured Projects"
         description="A selection of web and mobile applications"
       />
 
-      <div className="mt-10 flex flex-wrap justify-center gap-2">
+      <div className="mt-12 flex flex-wrap justify-start gap-2">
         {categories.map((category) => {
           const Icon = category.icon;
           const isActive = activeCategory === category.id;
@@ -35,10 +35,10 @@ export function PortfolioView({
               variant={isActive ? "default" : "ghost"}
               onClick={() => onCategoryChange(category.id)}
               size="sm"
-              className={`transition-all duration-300 ${
+              className={`rounded-none border px-4 transition-colors duration-200 ${
                 isActive
-                  ? "bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-400 hover:to-blue-400"
-                  : "text-blue-100 hover:bg-blue-500/20 hover:text-blue-50"
+                  ? "border-cyan-300 bg-cyan-300 text-zinc-950 hover:bg-white"
+                  : "border-white/10 bg-transparent text-zinc-400 hover:border-white/25 hover:bg-white/5 hover:text-white"
               }`}
             >
               <Icon className="mr-1.5 h-4 w-4" />
@@ -48,14 +48,14 @@ export function PortfolioView({
         })}
       </div>
 
-      <div className="mt-10 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-10 md:grid-cols-2">
         {projects.map((project) => (
           <ProjectCard key={project.id} project={project} />
         ))}
       </div>
 
       {projects.length === 0 && (
-        <p className="py-10 text-center text-sm text-blue-100/70">
+        <p className="py-10 text-left text-sm text-zinc-500">
           No projects found in this category.
         </p>
       )}

@@ -10,7 +10,7 @@ interface ContactFormViewProps {
 
 export function ContactFormView({ formAction, state }: ContactFormViewProps) {
   return (
-    <form action={formAction} className="space-y-6">
+    <form action={formAction} className="space-y-7">
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
         <InputField label="Full Name" id="fullName" type="text" required />
         <InputField label="Company" id="company" type="text" required />
@@ -22,7 +22,7 @@ export function ContactFormView({ formAction, state }: ContactFormViewProps) {
       <TextareaField label="Your Message" id="message" rows={5} required />
       <button
         type="submit"
-        className="w-full transform rounded-lg bg-gradient-to-r from-cyan-500 to-blue-500 px-6 py-3 font-medium text-white shadow-lg transition-all hover:-translate-y-0.5 hover:from-cyan-400 hover:to-blue-400 hover:shadow-xl hover:shadow-blue-500/50"
+        className="w-full bg-cyan-300 px-6 py-3.5 text-sm font-semibold text-zinc-950 transition-colors hover:bg-white"
       >
         Send Message
       </button>
@@ -30,8 +30,8 @@ export function ContactFormView({ formAction, state }: ContactFormViewProps) {
         <p
           className={
             state.status
-              ? "rounded-lg border border-green-400/30 bg-green-500/10 p-3 text-green-400"
-              : "rounded-lg border border-red-400/30 bg-red-500/10 p-3 text-red-300"
+              ? "border border-green-400/30 bg-green-500/10 p-3 text-green-400"
+              : "border border-red-400/30 bg-red-500/10 p-3 text-red-300"
           }
           aria-live="polite"
         >

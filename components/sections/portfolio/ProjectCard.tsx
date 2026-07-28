@@ -1,8 +1,6 @@
 import { ExternalLink, Github } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import type { PortfolioItem } from "@/types";
 
 interface ProjectCardProps {
@@ -12,98 +10,77 @@ interface ProjectCardProps {
 export function ProjectCard({ project }: ProjectCardProps) {
   return (
     <article className="group h-full">
-      <div className="relative flex h-full flex-col overflow-hidden rounded-lg border border-blue-400/30 bg-blue-500/10 backdrop-blur-sm transition-all duration-300 hover:border-blue-400/50 hover:shadow-lg hover:shadow-blue-500/20">
-        <div className="relative h-48 w-full overflow-hidden bg-gradient-to-br from-blue-500/20 to-cyan-500/20">
+      <div className="relative flex h-full flex-col overflow-hidden border border-white/10 bg-[#101013] transition-colors duration-300 hover:border-white/25">
+        <div className="relative aspect-[16/10] w-full overflow-hidden bg-zinc-900">
           <Image
             src={project.img}
             alt={project.description.name}
             fill
-            className="object-cover transition-transform duration-300 group-hover:scale-105"
-            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            className="object-cover opacity-90 transition-all duration-500 group-hover:scale-[1.025] group-hover:opacity-100"
+            sizes="(max-width: 768px) 100vw, 50vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-blue-950/50 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+          <div className="absolute inset-0 ring-1 ring-inset ring-white/5" />
         </div>
 
-        <div className="flex flex-1 flex-col space-y-3 p-5">
-          <div className="space-y-1">
-            <h3 className="text-lg font-semibold tracking-tight text-white">
-              {project.description.name}
-            </h3>
-            <p className="text-xs text-blue-100/70">
-              {project.description.title}
-            </p>
+        <div className="flex flex-1 flex-col p-6">
+          <div className="mb-5 flex items-start justify-between gap-4">
+            <div>
+              <h3 className="text-xl font-semibold tracking-[-0.025em] text-white">
+                {project.description.name}
+              </h3>
+              <p className="mt-1 text-sm text-zinc-500">
+                {project.description.title}
+              </p>
+            </div>
+            <span className="mt-1 text-xs tracking-[0.12em] text-zinc-600 uppercase">
+              {project.category.replace("-", " ")}
+            </span>
           </div>
 
-          <div className="flex flex-wrap gap-1.5">
+          <div className="mb-6 flex flex-wrap gap-x-3 gap-y-2">
             {project.technologies.slice(0, 3).map((technology) => (
-              <Badge
+              <span
                 key={technology}
-                variant="secondary"
-                className="border-blue-400/30 bg-blue-500/20 text-xs font-medium text-blue-100 hover:bg-blue-500/30"
+                className="text-xs font-medium text-zinc-400"
               >
                 {technology}
-              </Badge>
+              </span>
             ))}
             {project.technologies.length > 3 && (
-              <Badge
-                variant="outline"
-                className="border-blue-400/30 bg-blue-500/10 text-xs text-blue-100"
-              >
+              <span className="text-xs text-zinc-600">
                 +{project.technologies.length - 3}
-              </Badge>
+              </span>
             )}
           </div>
 
-          <div className="mt-auto flex gap-2 pt-2">
+          <div className="mt-auto flex gap-5 border-t border-white/10 pt-5">
             {project.links.demo && (
-              <Button
-                size="sm"
-                className="h-8 flex-1 bg-gradient-to-r from-cyan-500 to-blue-500 text-xs hover:from-cyan-400 hover:to-blue-400"
-                asChild
+              <Link
+                href={project.links.demo}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center text-xs font-semibold tracking-wide text-white uppercase transition-colors hover:text-cyan-300"
               >
-                <Link
-                  href={project.links.demo}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <ExternalLink className="mr-1 h-3 w-3" />
-                  Demo
-                  <span className="sr-only">
-                    {" "}
-                    of {project.description.name}
-                  </span>
-                </Link>
-              </Button>
+                Live project
+                <ExternalLink className="ml-1.5 h-3 w-3" />
+                <span className="sr-only"> of {project.description.name}</span>
+              </Link>
             )}
             {project.links.source ? (
-              <Button
-                variant="outline"
-                size="sm"
-                className="h-8 flex-1 border-blue-400/30 bg-blue-500/10 text-xs text-blue-100 hover:border-blue-400/50 hover:bg-blue-500/20"
-                asChild
+              <Link
+                href={project.links.source}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center text-xs font-semibold tracking-wide text-zinc-500 uppercase transition-colors hover:text-white"
               >
-                <Link
-                  href={project.links.source}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Github className="mr-1 h-3 w-3" />
-                  Code
-                  <span className="sr-only">
-                    {" "}
-                    for {project.description.name}
-                  </span>
-                </Link>
-              </Button>
+                Source
+                <Github className="ml-1.5 h-3 w-3" />
+                <span className="sr-only"> for {project.description.name}</span>
+              </Link>
             ) : (
-              <Button
-                variant="outline"
-                size="sm"
-                disabled
-                className="h-8 flex-1 cursor-not-allowed border-blue-400/20 bg-blue-500/10 text-xs text-blue-200 opacity-50"
-              >
+              <span className="text-xs font-semibold tracking-wide text-zinc-700 uppercase">
                 Private Repo
-              </Button>
+              </span>
             )}
           </div>
         </div>

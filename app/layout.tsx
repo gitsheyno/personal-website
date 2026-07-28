@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
-import { Nunito } from "next/font/google";
+import { Manrope } from "next/font/google";
 import "@/app/globals.css";
 import { SiteBackground } from "@/components/layout/SiteBackground";
 import { StructuredData } from "@/components/seo/StructuredData";
 import { siteConfig } from "@/data/seo";
 
-const nunito = Nunito({
+const manrope = Manrope({
   subsets: ["latin"],
-  weight: ["400", "600", "700", "900"],
+  weight: ["400", "500", "600", "700", "800"],
   display: "swap",
 });
 
@@ -70,8 +70,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={nunito.className}>
-      <body className="min-h-screen bg-background text-foreground antialiased">
+    <html lang="en" className={manrope.className}>
+      <body className="min-h-screen bg-[#0b0b0d] text-[#f4f4f5] antialiased">
         <SiteBackground />
         {children}
         <StructuredData />

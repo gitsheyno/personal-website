@@ -1,5 +1,4 @@
 import type { LucideIcon } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
 
 interface SectionHeaderProps {
@@ -18,28 +17,31 @@ export function SectionHeader({
   compact = false,
 }: SectionHeaderProps) {
   return (
-    <header className={cn("text-center", compact ? "space-y-3" : "space-y-4")}>
+    <header
+      className={cn(
+        "grid gap-5 md:grid-cols-[minmax(0,1fr)_minmax(18rem,30rem)] md:items-end",
+        compact && "md:grid-cols-[minmax(0,1fr)_minmax(16rem,24rem)]"
+      )}
+    >
       {eyebrow && (
-        <Badge
-          variant="secondary"
-          className="mb-4 border-blue-400/30 bg-blue-500/20 text-blue-100"
-        >
-          {Icon && <Icon className="mr-2 h-3 w-3" />}
-          {eyebrow}
-        </Badge>
+        <div className="col-span-full flex items-center gap-3 text-xs font-semibold tracking-[0.18em] text-cyan-300 uppercase">
+          {Icon && <Icon className="h-4 w-4" />}
+          <span>{eyebrow}</span>
+          <span className="h-px w-10 bg-cyan-300/50" />
+        </div>
       )}
       <h2
         className={cn(
-          "font-bold tracking-tight text-white",
-          compact ? "text-3xl md:text-4xl" : "text-4xl md:text-5xl"
+          "max-w-3xl font-semibold tracking-[-0.04em] text-white",
+          compact ? "text-4xl md:text-5xl" : "text-4xl md:text-6xl"
         )}
       >
         {title}
       </h2>
       <p
         className={cn(
-          "mx-auto max-w-2xl text-blue-100/70",
-          compact ? "text-sm" : "text-lg"
+          "max-w-xl leading-7 text-zinc-400 md:justify-self-end",
+          compact ? "text-sm" : "text-base md:text-lg"
         )}
       >
         {description}

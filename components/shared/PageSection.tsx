@@ -15,12 +15,12 @@ export function PageSection({
   return (
     <section
       className={cn(
-        "w-full scroll-mt-20 px-4 py-20 md:px-6 lg:px-8",
+        "w-full scroll-mt-24 border-t border-white/10 px-5 py-24 md:px-8 md:py-32",
         className
       )}
       {...props}
     >
-      <div className={cn("mx-auto w-full max-w-7xl", contentClassName)}>
+      <div className={cn("mx-auto w-full max-w-6xl", contentClassName)}>
         {children}
       </div>
     </section>

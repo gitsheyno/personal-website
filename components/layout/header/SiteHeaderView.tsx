@@ -34,15 +34,15 @@ export function SiteHeaderView({
       <header
         className={`fixed inset-x-0 top-0 z-40 transition-all duration-300 ${
           isScrolled
-            ? "border-b border-blue-400/20 bg-blue-950/80 shadow-lg shadow-blue-900/20 backdrop-blur-md"
+            ? "border-b border-white/10 bg-[#0b0b0d]/90 backdrop-blur-xl"
             : "bg-transparent"
         }`}
       >
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-6xl px-5 md:px-8">
           <div className="flex h-16 items-center justify-between md:h-20">
             <Link href="#hero" className="group flex-shrink-0">
-              <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-2xl font-bold text-transparent transition-all duration-300 group-hover:from-cyan-300 group-hover:to-blue-300 md:text-3xl">
-                Shayan
+              <span className="text-base font-semibold tracking-[-0.02em] text-white md:text-lg">
+                Shayan Heidary<span className="text-cyan-300">.</span>
               </span>
             </Link>
 
@@ -52,16 +52,16 @@ export function SiteHeaderView({
               <div className="hidden items-center space-x-3 md:flex">
                 <a
                   href={phoneHref}
-                  className="px-4 py-2 text-sm font-medium text-blue-100 transition-colors hover:text-cyan-300"
+                  className="text-xs font-medium text-zinc-400 transition-colors hover:text-white"
                 >
                   {phoneDisplay}
                 </a>
-                <div className="h-6 w-px bg-blue-400/30" />
+                <div className="h-5 w-px bg-white/15" />
                 <Button
                   asChild
                   size="sm"
                   variant="ghost"
-                  className="group p-2 text-blue-100 hover:bg-blue-500/20"
+                  className="group rounded-none p-2 text-zinc-300 hover:bg-white/5 hover:text-white"
                 >
                   <a href={phoneHref} aria-label={`Call ${phoneDisplay}`}>
                     <Phone className="h-5 w-5 transition-transform group-hover:rotate-12" />
@@ -72,7 +72,7 @@ export function SiteHeaderView({
               <Button
                 variant="ghost"
                 size="icon"
-                className="h-10 w-10 text-blue-100 hover:bg-blue-500/20 md:hidden"
+                className="h-10 w-10 rounded-none text-zinc-200 hover:bg-white/5 md:hidden"
                 onClick={onToggleMobileMenu}
                 aria-expanded={isMobileMenuOpen}
                 aria-label={

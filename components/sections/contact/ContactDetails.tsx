@@ -7,16 +7,20 @@ interface ContactDetailsProps {
 
 export function ContactDetails({ details }: ContactDetailsProps) {
   return (
-    <div className="space-y-6">
+    <div className="space-y-8">
       <div>
-        <h2 className="mb-2 text-3xl font-bold text-white">Contact Me</h2>
-        <div className="h-1.5 w-20 rounded-full bg-cyan-300" />
+        <p className="mb-3 text-xs font-semibold tracking-[0.16em] text-cyan-300 uppercase">
+          Contact
+        </p>
+        <h2 className="text-4xl font-semibold tracking-[-0.045em] text-white">
+          Let&apos;s build something useful.
+        </h2>
       </div>
-      <p className="max-w-md text-lg text-blue-50/90">
+      <p className="max-w-md text-base leading-7 text-zinc-400">
         Not sure what you need? I&apos;d be happy to listen and suggest ideas
         you hadn&apos;t considered.
       </p>
-      <dl className="space-y-4 pt-2">
+      <dl className="space-y-5 border-t border-white/10 pt-7">
         <ContactDetail
           icon={Mail}
           label="Email"
@@ -47,13 +51,18 @@ function ContactDetail({
 }) {
   return (
     <div className="flex items-center gap-4">
-      <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white/20 text-white">
-        <Icon className="h-6 w-6" />
+      <div className="flex h-10 w-10 items-center justify-center border border-white/15 text-cyan-300">
+        <Icon className="h-4 w-4" />
       </div>
       <div>
-        <dt className="text-sm font-medium text-cyan-200">{label}</dt>
+        <dt className="text-xs tracking-[0.1em] text-zinc-500 uppercase">
+          {label}
+        </dt>
         <dd>
-          <a href={href} className="font-medium text-white hover:text-cyan-100">
+          <a
+            href={href}
+            className="text-sm font-medium text-zinc-200 hover:text-cyan-300"
+          >
             {value}
           </a>
         </dd>
