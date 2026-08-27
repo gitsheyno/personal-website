@@ -1,6 +1,10 @@
 import type { LucideIcon } from "lucide-react";
 
-export type ProjectCategory = "web-app" | "mobile-app" | "package" | "service";
+export type ProjectCategory =
+  | "web-app"
+  | "e-commerce"
+  | "package"
+  | "service";
 export type ProjectFilter = "all" | ProjectCategory;
 
 export interface PortfolioItem {

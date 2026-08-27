@@ -8,7 +8,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date("2026-07-25"),
       changeFrequency: "monthly",
       priority: 1,
-      images: [`${siteConfig.url}/og.png`],
+      images: [`${siteConfig.url}/og.jpg`],
     },
   ];
 }

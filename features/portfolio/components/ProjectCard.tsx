@@ -17,7 +17,8 @@ export function ProjectCard({ project }: ProjectCardProps) {
             alt={project.description.name}
             fill
             className="object-cover opacity-90 transition-all duration-500 group-hover:scale-[1.025] group-hover:opacity-100"
-            sizes="(max-width: 768px) 100vw, 50vw"
+            sizes="(max-width: 768px) calc(100vw - 2.5rem), 560px"
+            quality={80}
           />
           <div className="absolute inset-0 ring-1 ring-inset ring-white/5" />
         </div>

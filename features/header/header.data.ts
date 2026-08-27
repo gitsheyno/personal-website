@@ -19,6 +19,7 @@ export const headerContact: HeaderContact = {
 
 export const headerIdentity: HeaderIdentity = {
   name: profile.name,
+  brandName: profile.brandName,
   currentCompany: profile.currentCompany,
   currentCompanyUrl: profile.currentCompanyUrl,
   socialLinks: profile.socialLinks,

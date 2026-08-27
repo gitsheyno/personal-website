@@ -46,6 +46,8 @@ export function ExperienceCard({
                           src={experience.img}
                           width={100}
                           height={100}
+                          sizes="48px"
+                          quality={85}
                           alt={`${experience.company} logo`}
                           className={`h-full w-full rounded-lg ${
                             experience.imageFit === "contain"

@@ -26,7 +26,7 @@ export function PortfolioView({
       <SectionHeader
         compact
         title="Featured Projects"
-        description="A selection of web and mobile applications"
+        description="A selection of web, mobile, and e-commerce products"
       />
 
       <div className="mt-12 flex flex-wrap justify-start gap-2">

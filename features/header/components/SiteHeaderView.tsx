@@ -1,6 +1,7 @@
 import { Menu, Phone, X } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { BrandLogo } from "./BrandLogo";
 import { DesktopNavigation } from "./DesktopNavigation";
 import { MobileNavigation } from "./MobileNavigation";
 import type { HeaderIdentity, NavigationItem } from "../header.types";
@@ -37,10 +38,12 @@ export function SiteHeaderView({
       >
         <div className="mx-auto max-w-6xl px-5 md:px-8">
           <div className="flex h-16 items-center justify-between md:h-20">
-            <Link href="#hero" className="group flex-shrink-0">
-              <span className="text-base font-semibold tracking-[-0.02em] text-white md:text-lg">
-                {company.name}<span className="text-cyan-300">.</span>
-              </span>
+            <Link
+              href="#hero"
+              className="group flex-shrink-0"
+              aria-label={`${company.brandName} — back to top`}
+            >
+              <BrandLogo name={company.brandName} />
             </Link>
 
             <DesktopNavigation items={items} />

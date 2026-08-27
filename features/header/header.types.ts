@@ -10,6 +10,7 @@ export interface HeaderContact {
 
 export interface HeaderIdentity {
   name: string;
+  brandName: string;
   currentCompany: string;
   currentCompanyUrl: string;
   socialLinks: {
