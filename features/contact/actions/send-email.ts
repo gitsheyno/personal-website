@@ -1,0 +1,36 @@
+"use server";
+
+import { Resend } from "resend";
+import { profile } from "@/config/profile";
+import type { ContactFormState } from "../contact.types";
+
+const resend = new Resend(process.env.API_KEY);
+
+export const sendEmail = async (
+  _state: ContactFormState,
+  formData: FormData
+) => {
+  try {
+    const fullName = formData.get("fullName") as string;
+    const senderEmail = formData.get("email") as string;
+    const message = formData.get("message") as string;
+
+    const response = await resend.emails.send({
+      from: "onboarding@resend.dev",
+      to: profile.email,
+      subject: `Email address : ${senderEmail} and email from ${fullName}`,
+      text: message,
+    });
+    const { error } = response;
+
+    if (error) {
+      console.error("Error sending email:", error);
+      return { status: false, message: "Failed to send email" };
+    }
+
+    return { status: true, message: "Message is sent" };
+  } catch (e) {
+    console.error("Exception sending email:", e);
+    return { status: false, message: "An unexpected error occurred" };
+  }
+};

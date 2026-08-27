@@ -1,11 +1,11 @@
-import { SiteHeader } from "@/components/layout/header/SiteHeader";
+import { SiteHeader } from "@/features/header";
 import {
   ContactSection,
   ExperienceSection,
   HeroSection,
   PortfolioSection,
   SkillsSection,
-} from "@/components/sections";
+} from "@/features";
 
 export default function HomePage() {
   return (

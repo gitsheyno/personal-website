@@ -1,4 +1,4 @@
-import { siteConfig } from "@/data/seo";
+import { siteConfig } from "@/config/site";
 
 const profilePageSchema = {
   "@context": "https://schema.org",

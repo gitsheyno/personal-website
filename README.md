@@ -1,36 +1,61 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Shayan Heidary — Portfolio
 
-## Getting Started
+A single-page developer portfolio built with Next.js, React, TypeScript, and
+Tailwind CSS. It presents work experience, skills, selected projects, and a
+contact form backed by Resend.
 
-First, run the development server:
+## Development
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Useful checks:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+```bash
+npm run typecheck
+npm run lint
+npm run build
+```
 
-## Learn More
+## Architecture
 
-To learn more about Next.js, take a look at the following resources:
+The codebase uses feature-based ownership. A feature keeps its components,
+content, types, and server actions together instead of spreading them across
+global folders.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```text
+app/                    Next.js routes, metadata, and global styles
+features/
+  contact/
+    actions/            Contact-specific server actions
+    components/
+    contact.data.ts
+    contact.types.ts
+  experience/
+  header/
+  hero/
+  portfolio/
+  skills/
+components/
+  layout/               App-wide visual layout
+  seo/                  Shared SEO rendering
+  shared/               Cross-feature components
+  ui/                   Low-level design-system primitives
+config/                 Site-wide SEO and profile configuration
+lib/                    Shared utilities
+public/                 Static assets
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Each feature exposes its public UI through an `index.ts`. Internal feature
+files use relative imports, making feature boundaries clear and keeping domain
+types close to the code that owns them.
 
-## Deploy on Vercel
+## Environment
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Copy `.env.example` to `.env` and provide the required values. The contact form
+uses `API_KEY` for Resend, while `NEXT_PUBLIC_SITE_URL` and
+`GOOGLE_SITE_VERIFICATION` customize SEO metadata when supplied.
