@@ -9,17 +9,17 @@ export function SkillCategoryPanel({ category }: SkillCategoryPanelProps) {
   const Icon = category.icon;
 
   return (
-    <Card className="overflow-hidden rounded-none border border-white/10 bg-[#101013]">
-      <CardContent className="p-6 md:p-10">
-        <div className="mb-10 flex items-start gap-5">
-          <div className="border border-white/15 p-3 text-cyan-300">
+    <Card className="site-panel overflow-hidden rounded-none">
+      <CardContent className="p-5 sm:p-6 md:p-8">
+        <div className="mb-8 flex items-start gap-4">
+          <div className="border border-white/15 p-3 text-site-accent">
             <Icon className="h-5 w-5" />
           </div>
           <div>
-            <h3 className="mb-2 text-2xl font-semibold tracking-[-0.03em] text-white">
+            <h3 className="mb-2 text-2xl font-semibold tracking-[-0.03em] text-site-text">
               {category.name}
             </h3>
-            <p className="text-sm leading-6 text-zinc-400">
+            <p className="text-base leading-7 text-site-muted">
               {category.description}
             </p>
           </div>
@@ -29,10 +29,10 @@ export function SkillCategoryPanel({ category }: SkillCategoryPanelProps) {
           {category.skills.map((skill) => (
             <div key={skill.name} className="group">
               <div className="flex items-center justify-between border-r border-b border-white/10 p-4 transition-colors hover:bg-white/[0.03]">
-                <span className="text-sm font-medium text-zinc-300 transition-colors group-hover:text-white">
+                <span className="text-sm font-medium text-site-muted transition-colors group-hover:text-site-text">
                   {skill.name}
                 </span>
-                <span className="h-1.5 w-1.5 bg-cyan-300/70" />
+                <span className="h-1.5 w-1.5 bg-site-accent" />
               </div>
             </div>
           ))}

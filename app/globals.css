@@ -6,20 +6,36 @@ html {
   scroll-behavior: smooth;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 @layer base {
   :root {
-    --background: 240 6% 5%;
-    --foreground: 0 0% 96%;
-    --card: 240 5% 8%;
-    --card-foreground: 0 0% 96%;
+    --site-background: #12110f;
+    --site-background-rgb: 18 17 15;
+    --site-surface: #1d1b18;
+    --site-text: #f5f1e9;
+    --site-muted: #d2cbc0;
+    --site-subtle: #b5ada0;
+    --site-border: #49453f;
+    --site-control-border: #81796d;
+    --site-accent: #80deea;
+    --site-accent-rgb: 128 222 234;
+    --background: 30 9% 6%;
+    --foreground: 39 38% 94%;
+    --card: 30 9% 11%;
+    --card-foreground: 39 38% 94%;
     --popover: 240 5% 8%;
     --popover-foreground: 0 0% 96%;
-    --primary: 187 92% 45%;
+    --primary: 187 70% 71%;
     --primary-foreground: 240 6% 5%;
     --secondary: 240 4% 12%;
     --secondary-foreground: 0 0% 96%;
     --muted: 240 4% 12%;
-    --muted-foreground: 240 5% 65%;
+    --muted-foreground: 35 15% 78%;
     --accent: 240 4% 14%;
     --accent-foreground: 0 0% 96%;
     --destructive: 0 84.2% 60.2%;
@@ -65,10 +81,27 @@ html {
   }
   body {
     @apply bg-background text-foreground;
+    line-height: 1.6;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--site-accent);
+    outline-offset: 3px;
   }
 
   ::selection {
-    background: rgba(34, 211, 238, 0.25);
+    background: rgba(128, 222, 234, 0.25);
     color: #ffffff;
+  }
+}
+
+@layer components {
+  .site-panel {
+    background: var(--site-surface);
+    border: 1px solid var(--site-border);
+  }
+
+  .site-control {
+    border: 1px solid var(--site-control-border);
   }
 }

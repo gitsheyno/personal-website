@@ -8,19 +8,19 @@ interface ContactFormViewProps {
 
 export function ContactFormView({ formAction, state }: ContactFormViewProps) {
   return (
-    <form action={formAction} className="space-y-7">
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+    <form action={formAction} className="max-w-2xl space-y-6">
+      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
         <InputField label="Full Name" id="fullName" type="text" required />
         <InputField label="Company" id="company" type="text" required />
       </div>
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
         <InputField label="Email" id="email" type="email" required />
         <InputField label="Phone Number" id="phoneNumber" type="tel" />
       </div>
       <TextareaField label="Your Message" id="message" rows={5} required />
       <button
         type="submit"
-        className="w-full bg-cyan-300 px-6 py-3.5 text-sm font-semibold text-zinc-950 transition-colors hover:bg-white"
+        className="min-h-12 w-full bg-site-accent px-6 py-3 text-base font-semibold text-site-background transition-colors hover:bg-white sm:w-auto"
       >
         Send Message
       </button>
@@ -28,10 +28,11 @@ export function ContactFormView({ formAction, state }: ContactFormViewProps) {
         <p
           className={
             state.status
-              ? "border border-green-400/30 bg-green-500/10 p-3 text-green-400"
-              : "border border-red-400/30 bg-red-500/10 p-3 text-red-300"
+              ? "border border-green-300/60 bg-green-500/10 p-3 text-green-200"
+              : "border border-red-300/60 bg-red-500/10 p-3 text-red-200"
           }
           aria-live="polite"
+          role={state.status ? "status" : "alert"}
         >
           {state.message}
         </p>

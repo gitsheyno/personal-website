@@ -16,6 +16,16 @@ const config = {
   			sm: 'calc(var(--radius) - 4px)'
   		},
   		colors: {
+			site: {
+				background: 'var(--site-background)',
+				surface: 'var(--site-surface)',
+				text: 'var(--site-text)',
+				muted: 'var(--site-muted)',
+				subtle: 'var(--site-subtle)',
+				border: 'var(--site-border)',
+				control: 'var(--site-control-border)',
+				accent: 'var(--site-accent)'
+			},
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			card: {

@@ -35,23 +35,24 @@ export function MobileNavigation({
       {isOpen && (
         <button
           type="button"
-          className="fixed inset-0 z-30 bg-black/60 backdrop-blur-sm md:hidden"
+          className="fixed inset-0 z-30 bg-black/60 backdrop-blur-sm lg:hidden"
           onClick={onClose}
           aria-label="Close navigation menu"
         />
       )}
 
       <aside
-        className={`fixed top-16 right-0 z-30 h-[calc(100dvh-4rem)] w-full max-w-sm transform border-l border-white/10 bg-[#0d0d10] transition-all duration-300 md:hidden ${
+        className={`fixed top-16 right-0 z-30 h-[calc(100dvh-4rem)] w-full max-w-sm transform overflow-y-auto border-l border-white/20 bg-site-surface transition-all duration-300 motion-reduce:transition-none md:top-20 md:h-[calc(100dvh-5rem)] lg:hidden ${
           isOpen
             ? "translate-x-0 opacity-100"
             : "pointer-events-none translate-x-full opacity-0"
         }`}
         aria-hidden={!isOpen}
+        inert={!isOpen}
       >
         <div className="space-y-6 p-6">
           <nav className="space-y-3" aria-label="Mobile navigation">
-            <p className="text-xs font-semibold tracking-[0.16em] text-zinc-500 uppercase">
+            <p className="text-xs font-semibold tracking-[0.12em] text-site-muted uppercase">
               Navigation
             </p>
             {items.map((item) => (
@@ -59,7 +60,7 @@ export function MobileNavigation({
                 key={item.href}
                 href={item.href}
                 onClick={onClose}
-                className="block border-b border-white/10 py-3 text-lg font-medium text-zinc-200 transition-colors hover:text-cyan-300"
+                className="block border-b border-white/10 py-3 text-lg font-medium text-site-text transition-colors hover:text-site-accent"
               >
                 {item.label}
               </Link>
@@ -67,14 +68,14 @@ export function MobileNavigation({
           </nav>
 
           <div className="border-t border-white/10 pt-6">
-            <p className="mb-4 text-xs font-semibold tracking-[0.16em] text-zinc-500 uppercase">
+            <p className="mb-4 text-xs font-semibold tracking-[0.12em] text-site-muted uppercase">
               Connect
             </p>
             <div className="space-y-3">
               <Button
                 asChild
                 variant="outline"
-                className="w-full justify-start rounded-none border-white/15 bg-transparent text-zinc-200 hover:border-white/30 hover:bg-white/5"
+                className="w-full justify-start rounded-none border-white/15 bg-transparent text-site-text hover:border-white/30 hover:bg-white/5"
               >
                 <a href={phoneHref} className="group">
                   <Phone className="mr-3 h-5 w-5 transition-transform group-hover:rotate-12" />
@@ -108,12 +109,12 @@ export function MobileNavigation({
           </div>
 
           <div className="border-t border-white/10 pt-6">
-            <p className="mb-4 text-xs font-semibold tracking-[0.16em] text-zinc-500 uppercase">
+            <p className="mb-4 text-xs font-semibold tracking-[0.12em] text-site-muted uppercase">
               Company
             </p>
             <Button
               asChild
-              className="w-full rounded-none bg-cyan-300 text-zinc-950 transition-colors hover:bg-white"
+              className="w-full rounded-none bg-site-accent text-site-background transition-colors hover:bg-white"
             >
               <a
                 href={company.currentCompanyUrl}
@@ -146,7 +147,7 @@ function SocialButton({
       asChild
       variant="outline"
       size="icon"
-      className="flex-1 rounded-none border-white/15 bg-transparent text-zinc-300 hover:border-white/30 hover:bg-white/5 hover:text-white"
+      className="min-h-11 flex-1 rounded-none border-white/35 bg-transparent text-site-text hover:border-white/60 hover:bg-white/5 hover:text-site-text"
     >
       <a
         href={href}

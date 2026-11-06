@@ -9,14 +9,14 @@ export function ContactDetails({ details }: ContactDetailsProps) {
   return (
     <div className="space-y-8">
       <div>
-        <p className="mb-3 text-xs font-semibold tracking-[0.16em] text-cyan-300 uppercase">
+        <p className="mb-3 text-xs font-semibold tracking-[0.16em] text-site-accent uppercase">
           Contact
         </p>
-        <h2 className="text-4xl font-semibold tracking-[-0.045em] text-white">
+        <h2 className="text-3xl font-semibold leading-tight tracking-[-0.035em] text-site-text sm:text-4xl">
           Let&apos;s build something useful.
         </h2>
       </div>
-      <p className="max-w-md text-base leading-7 text-zinc-400">
+      <p className="max-w-md text-base leading-7 text-site-subtle">
         Not sure what you need? I&apos;d be happy to listen and suggest ideas
         you hadn&apos;t considered.
       </p>
@@ -51,17 +51,17 @@ function ContactDetail({
 }) {
   return (
     <div className="flex items-center gap-4">
-      <div className="flex h-10 w-10 items-center justify-center border border-white/15 text-cyan-300">
+      <div className="flex h-11 w-11 shrink-0 items-center justify-center border border-white/25 text-site-accent">
         <Icon className="h-4 w-4" />
       </div>
       <div>
-        <dt className="text-xs tracking-[0.1em] text-zinc-500 uppercase">
+        <dt className="text-xs tracking-[0.1em] text-site-subtle uppercase">
           {label}
         </dt>
         <dd>
           <a
             href={href}
-            className="text-sm font-medium text-zinc-200 hover:text-cyan-300"
+            className="inline-block min-h-11 break-all py-2 text-base font-medium text-site-text hover:text-site-accent"
           >
             {value}
           </a>

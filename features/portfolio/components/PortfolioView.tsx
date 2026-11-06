@@ -38,11 +38,12 @@ export function PortfolioView({
               key={category.id}
               variant={isActive ? "default" : "ghost"}
               onClick={() => onCategoryChange(category.id)}
-              size="sm"
+              size="default"
+              aria-pressed={isActive}
               className={`rounded-none border px-4 transition-colors duration-200 ${
                 isActive
-                  ? "border-cyan-300 bg-cyan-300 text-zinc-950 hover:bg-white"
-                  : "border-white/10 bg-transparent text-zinc-400 hover:border-white/25 hover:bg-white/5 hover:text-white"
+                  ? "border-site-accent bg-site-accent text-site-background hover:bg-white"
+                  : "site-control bg-transparent text-site-text hover:border-white/60 hover:bg-white/5 hover:text-site-text"
               }`}
             >
               <Icon className="mr-1.5 h-4 w-4" />
@@ -59,7 +60,7 @@ export function PortfolioView({
       </div>
 
       {projects.length === 0 && (
-        <p className="py-10 text-left text-sm text-zinc-500">
+        <p className="py-10 text-left text-sm text-site-muted">
           No projects found in this category.
         </p>
       )}

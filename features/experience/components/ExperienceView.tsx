@@ -33,7 +33,7 @@ export function ExperienceView({
         description="A timeline of my career growth and key contributions at leading companies"
       />
 
-      <div className="relative mt-16">
+      <div className="relative mt-12">
         <div className="absolute top-0 bottom-0 left-5 hidden w-px bg-white/10 md:block" />
         <div className="space-y-3">
           {experiences.map((experience) => (
@@ -47,7 +47,7 @@ export function ExperienceView({
         </div>
       </div>
 
-      <div className="mt-20 border-t border-white/10 pt-8">
+      <div className="mt-14 border-t border-white/15 pt-8">
         <dl className="grid grid-cols-2 gap-px overflow-hidden border border-white/10 bg-white/10 md:grid-cols-3">
           <Stat value={`${experiences.length}+`} label="Companies" />
           <Stat value={`${achievementCount}+`} label="Achievements" />
@@ -72,11 +72,11 @@ function Stat({
   className?: string;
 }) {
   return (
-    <div className={`bg-[#0b0b0d] p-6 text-left md:p-8 ${className ?? ""}`}>
-      <dd className="mb-1 text-3xl font-semibold tracking-[-0.04em] text-white md:text-4xl">
+    <div className={`bg-site-background p-6 text-left md:p-8 ${className ?? ""}`}>
+      <dd className="mb-1 text-3xl font-semibold tracking-[-0.04em] text-site-text md:text-4xl">
         {value}
       </dd>
-      <dt className="text-xs tracking-[0.12em] text-zinc-500 uppercase">
+      <dt className="text-xs tracking-[0.1em] text-site-subtle uppercase">
         {label}
       </dt>
     </div>

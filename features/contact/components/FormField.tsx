@@ -2,7 +2,7 @@ import type { InputHTMLAttributes, TextareaHTMLAttributes } from "react";
 import { cn } from "@/lib/utils";
 
 const controlStyles =
-  "rounded-none border border-white/10 bg-[#0b0b0d] p-3 text-sm text-white outline-none transition-colors placeholder:text-zinc-700 hover:border-white/20 focus:border-cyan-300 focus:ring-1 focus:ring-cyan-300";
+  "site-control min-h-12 w-full rounded-none bg-site-background px-3.5 py-3 text-base text-site-text transition-colors placeholder:text-site-subtle hover:border-zinc-300 focus:border-site-accent focus:outline-none focus:ring-2 focus:ring-cyan-300/60";
 
 interface FieldShellProps {
   id: string;
@@ -16,9 +16,9 @@ function FieldShell({ id, label, required, children }: FieldShellProps) {
     <div className="flex flex-col">
       <label
         htmlFor={id}
-        className="mb-2 text-xs font-medium tracking-[0.08em] text-zinc-400 uppercase"
+        className="mb-2 text-sm font-medium text-site-text"
       >
-        {label} {required && <span className="text-cyan-300">*</span>}
+        {label} {required && <span className="text-site-accent" aria-hidden="true">*</span>}
       </label>
       {children}
     </div>

@@ -24,24 +24,23 @@ export function SectionHeader({
       )}
     >
       {eyebrow && (
-        <div className="col-span-full flex items-center gap-3 text-xs font-semibold tracking-[0.18em] text-cyan-300 uppercase">
+        <div className="col-span-full flex items-center gap-3 text-xs font-semibold tracking-[0.18em] text-site-accent uppercase">
           {Icon && <Icon className="h-4 w-4" />}
           <span>{eyebrow}</span>
-          <span className="h-px w-10 bg-cyan-300/50" />
+          <span className="h-px w-10 bg-[rgb(var(--site-accent-rgb)/0.5)]" />
         </div>
       )}
       <h2
         className={cn(
-          "max-w-3xl font-semibold tracking-[-0.04em] text-white",
-          compact ? "text-4xl md:text-5xl" : "text-4xl md:text-6xl"
+          "max-w-3xl font-semibold tracking-[-0.04em] text-site-text",
+          compact ? "text-3xl leading-tight sm:text-4xl" : "text-3xl leading-tight sm:text-4xl lg:text-5xl"
         )}
       >
         {title}
       </h2>
       <p
         className={cn(
-          "max-w-xl leading-7 text-zinc-400 md:justify-self-end",
-          compact ? "text-sm" : "text-base md:text-lg"
+          "max-w-xl text-base leading-7 text-site-muted md:justify-self-end"
         )}
       >
         {description}

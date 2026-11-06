@@ -32,7 +32,7 @@ export function SiteHeaderView({
       <header
         className={`fixed inset-x-0 top-0 z-40 transition-all duration-300 ${
           isScrolled
-            ? "border-b border-white/10 bg-[#0b0b0d]/90 backdrop-blur-xl"
+            ? "border-b border-white/10 bg-[rgb(var(--site-background-rgb)/0.94)] backdrop-blur-xl"
             : "bg-transparent"
         }`}
       >
@@ -49,10 +49,10 @@ export function SiteHeaderView({
             <DesktopNavigation items={items} />
 
             <div className="flex items-center space-x-4">
-              <div className="hidden items-center space-x-3 md:flex">
+              <div className="hidden items-center space-x-3 lg:flex">
                 <a
                   href={phoneHref}
-                  className="text-xs font-medium text-zinc-400 transition-colors hover:text-white"
+                  className="inline-flex min-h-11 items-center text-sm font-medium text-site-muted transition-colors hover:text-site-text"
                 >
                   {phoneDisplay}
                 </a>
@@ -61,7 +61,7 @@ export function SiteHeaderView({
                   asChild
                   size="sm"
                   variant="ghost"
-                  className="group rounded-none p-2 text-zinc-300 hover:bg-white/5 hover:text-white"
+                  className="group h-11 w-11 rounded-none p-2 text-site-text hover:bg-white/5 hover:text-site-text"
                 >
                   <a href={phoneHref} aria-label={`Call ${phoneDisplay}`}>
                     <Phone className="h-5 w-5 transition-transform group-hover:rotate-12" />
@@ -72,7 +72,7 @@ export function SiteHeaderView({
               <Button
                 variant="ghost"
                 size="icon"
-                className="h-10 w-10 rounded-none text-zinc-200 hover:bg-white/5 md:hidden"
+                className="h-11 w-11 rounded-none text-site-text hover:bg-white/5 lg:hidden"
                 onClick={onToggleMobileMenu}
                 aria-expanded={isMobileMenuOpen}
                 aria-label={

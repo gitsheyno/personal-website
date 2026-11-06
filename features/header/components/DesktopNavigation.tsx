@@ -7,12 +7,12 @@ interface DesktopNavigationProps {
 
 export function DesktopNavigation({ items }: DesktopNavigationProps) {
   return (
-    <ul className="hidden items-center gap-7 md:flex">
+    <ul className="hidden items-center gap-6 lg:flex">
       {items.map((item) => (
         <li key={item.href}>
           <Link
             href={item.href}
-            className="text-xs font-semibold tracking-[0.08em] text-zinc-400 uppercase transition-colors hover:text-white"
+            className="inline-flex min-h-11 items-center px-1 text-xs font-semibold tracking-[0.06em] text-site-muted uppercase transition-colors hover:text-site-text"
           >
             {item.label}
           </Link>

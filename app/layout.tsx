@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
-import { Manrope } from "next/font/google";
+import localFont from "next/font/local";
 import "@/app/globals.css";
 import { SiteBackground } from "@/components/layout/SiteBackground";
 import { StructuredData } from "@/components/seo/StructuredData";
 import { siteConfig } from "@/config/site";
 
-const manrope = Manrope({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
+const dmSans = localFont({
+  src: "./fonts/dm-sans-latin.woff2",
+  weight: "400 700",
   display: "swap",
 });
 
@@ -70,8 +70,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={manrope.className}>
-      <body className="min-h-screen bg-[#0b0b0d] text-[#f4f4f5] antialiased">
+    <html lang="en" className={dmSans.className}>
+      <body className="min-h-screen bg-site-background text-site-text antialiased">
         <SiteBackground />
         {children}
         <StructuredData />

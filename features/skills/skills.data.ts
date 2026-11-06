@@ -14,7 +14,6 @@ export const skillsData: SkillCategory[] = [
     name: "Frontend",
     icon: Code2,
     description: "Building beautiful, responsive user interfaces",
-    color: "from-blue-500 to-cyan-500",
     skills: [
       { name: "React", level: 95, category: "frontend" },
       { name: "Next.js", level: 95, category: "frontend" },
@@ -35,7 +34,6 @@ export const skillsData: SkillCategory[] = [
     name: "Backend",
     icon: Server,
     description: "Scalable server-side architecture & APIs",
-    color: "from-green-500 to-emerald-500",
     skills: [
       { name: "Node.js", level: 90, category: "backend" },
       { name: "API Design", level: 80, category: "backend" },
@@ -52,7 +50,6 @@ export const skillsData: SkillCategory[] = [
     icon: Bot,
     description:
       "Building intelligent apps with LLMs, agents, and vector workflows",
-    color: "from-purple-600 to-indigo-600",
     skills: [
       { name: "LLMs", level: 80, category: "ai" },
       { name: "LangChain", level: 70, category: "ai" },
@@ -65,7 +62,6 @@ export const skillsData: SkillCategory[] = [
     name: "DevOps",
     icon: Cloud,
     description: "Infrastructure, deployment & monitoring",
-    color: "from-orange-500 to-red-500",
     skills: [
       { name: "Docker", level: 70, category: "devops" },
       { name: "AWS", level: 60, category: "devops" },
@@ -77,7 +73,6 @@ export const skillsData: SkillCategory[] = [
     name: "Mobile Dev",
     icon: Smartphone,
     description: "Cross-platform mobile applications",
-    color: "from-pink-500 to-rose-500",
     skills: [
       { name: "React Native", level: 80, category: "mobile" },
       { name: "Mobile UI/UX", level: 85, category: "mobile" },
@@ -89,7 +84,6 @@ export const skillsData: SkillCategory[] = [
     icon: CheckCircle2,
     description:
       "Unit testing, component testing, and end-to-end quality assurance",
-    color: "from-yellow-500 to-amber-600",
     skills: [
       { name: "Vitest", level: 80, category: "testing" },
       { name: "Jest", level: 80, category: "testing" },

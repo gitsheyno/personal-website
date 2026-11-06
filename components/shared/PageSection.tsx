@@ -15,7 +15,7 @@ export function PageSection({
   return (
     <section
       className={cn(
-        "w-full scroll-mt-24 border-t border-white/10 px-5 py-24 md:px-8 md:py-32",
+        "w-full scroll-mt-24 border-t border-white/10 px-5 py-20 sm:px-6 md:px-8 md:py-24 lg:py-28",
         className
       )}
       {...props}

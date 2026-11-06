@@ -4,7 +4,6 @@ import type { PortfolioCategory, PortfolioItem } from "./portfolio.types";
 export const portfolioData: PortfolioItem[] = [
   {
     id: "plothaus",
-    color: "from-cyan-500 to-blue-600",
     description: {
       name: "Plothaus",
       title: "Online shop for CAD plans and large-format plots",
@@ -27,7 +26,6 @@ export const portfolioData: PortfolioItem[] = [
   },
   {
     id: "posterhaus",
-    color: "from-orange-500 to-rose-500",
     description: {
       name: "Posterhaus",
       title: "Online shop for custom poster printing",
@@ -50,7 +48,6 @@ export const portfolioData: PortfolioItem[] = [
   },
   {
     id: "druckhaus",
-    color: "from-sky-500 to-indigo-600",
     description: {
       name: "Druckhaus",
       title: "Digital platform for sustainable print services",
@@ -64,7 +61,6 @@ export const portfolioData: PortfolioItem[] = [
   },
   {
     id: "knime",
-    color: "from-blue-500 to-cyan-500",
     description: {
       name: "KNIME",
       title: "Open-source analytics platform",
@@ -79,7 +75,6 @@ export const portfolioData: PortfolioItem[] = [
   },
   {
     id: "low-carb",
-    color: "from-green-500 to-emerald-500",
     description: {
       name: "Low-Carb Recipes",
       title: "Light, guilt-free recipes",
@@ -94,7 +89,6 @@ export const portfolioData: PortfolioItem[] = [
   },
   {
     id: "internal-ui-library",
-    color: "from-violet-500 to-fuchsia-500",
     description: {
       name: "Internal UI Library",
       title: "Private reusable React component system",
@@ -106,7 +100,6 @@ export const portfolioData: PortfolioItem[] = [
   },
   {
     id: "internal-utility-package",
-    color: "from-amber-500 to-orange-500",
     description: {
       name: "Internal Utility Package",
       title: "Private npm toolkit for shared application logic",
@@ -118,7 +111,6 @@ export const portfolioData: PortfolioItem[] = [
   },
   {
     id: "FitMentor-AI",
-    color: "from-lime-500 to-green-500",
     description: {
       name: "FitMentor AI",
       title: "AI assistance as a Fitness Coach",

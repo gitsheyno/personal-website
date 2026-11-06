@@ -11,6 +11,5 @@ export interface SkillCategory {
   name: string;
   icon: LucideIcon;
   description: string;
-  color: string;
   skills: Skill[];
 }

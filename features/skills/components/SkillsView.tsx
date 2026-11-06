@@ -28,16 +28,16 @@ export function SkillsView({
       <Tabs
         value={activeCategory}
         onValueChange={onCategoryChange}
-        className="mt-14 w-full"
+        className="mt-10 w-full md:mt-12"
       >
-        <TabsList className="mb-8 flex h-auto w-full flex-wrap justify-start gap-0 border-b border-white/10 bg-transparent p-0">
+        <TabsList className="mb-6 flex h-auto w-full flex-wrap justify-start gap-0 border-b border-white/20 bg-transparent p-0">
           {categories.map((category) => {
             const Icon = category.icon;
             return (
               <TabsTrigger
                 key={category.id}
                 value={category.id}
-                className="h-auto rounded-none border-0 border-b-2 border-transparent px-4 py-4 text-zinc-500 shadow-none transition-colors hover:text-zinc-200 data-[state=active]:border-cyan-300 data-[state=active]:bg-transparent data-[state=active]:text-white data-[state=active]:shadow-none"
+                className="min-h-11 rounded-none border-0 border-b-2 border-transparent px-4 py-3 text-site-muted shadow-none transition-colors hover:text-site-text data-[state=active]:border-site-accent data-[state=active]:bg-transparent data-[state=active]:text-site-text data-[state=active]:shadow-none"
               >
                 <div className="flex items-center gap-3">
                   <Icon className="h-4 w-4" />

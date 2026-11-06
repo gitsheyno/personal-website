@@ -17,25 +17,26 @@ interface HeroViewProps {
 export function HeroView({ content, currentRoleIndex }: HeroViewProps) {
   return (
     <section id="hero" className="relative scroll-mt-20">
-      <div className="mx-auto flex min-h-screen w-full max-w-6xl flex-col justify-center px-5 pt-28 pb-16 md:px-8 md:pt-36">
-        <div className="grid items-end gap-16 lg:grid-cols-[minmax(0,1fr)_18rem]">
+      <div className="mx-auto flex min-h-svh w-full max-w-6xl flex-col justify-center px-5 pt-28 pb-16 sm:px-6 md:px-8 md:pt-32">
+        <div className="grid items-end gap-12 lg:grid-cols-[minmax(0,1fr)_15rem] lg:gap-16">
           <div>
-            <div className="mb-10 flex items-center gap-3 text-xs font-semibold tracking-[0.18em] text-cyan-300 uppercase">
-              <span className="h-2 w-2 rounded-full bg-cyan-300" />
+            <div className="mb-8 flex items-center gap-3 text-xs font-semibold tracking-[0.12em] text-site-accent uppercase">
+              <span className="h-2 w-2 rounded-full bg-site-accent" />
               Available for thoughtful product work
             </div>
 
-            <p className="mb-4 text-sm text-zinc-500">{content.greeting}</p>
-            <h1 className="max-w-4xl text-5xl font-semibold tracking-[-0.055em] text-white sm:text-7xl lg:text-[6.5rem] lg:leading-[0.95]">
+            <p className="mb-3 text-base text-site-muted">{content.greeting}</p>
+            <h1 className="max-w-4xl text-[clamp(2.75rem,7vw,5rem)] font-semibold leading-[1.08] tracking-[-0.045em] text-site-text">
               {content.name}
             </h1>
 
-            <div className="relative mt-6 h-10 overflow-hidden sm:h-12">
-              <p className="text-xl font-medium tracking-[-0.025em] text-zinc-300 sm:text-3xl">
+            <div className="relative mt-5 min-h-9 overflow-hidden sm:min-h-10">
+              <p className="text-lg font-medium leading-snug tracking-[-0.02em] text-site-text sm:text-2xl">
                 {content.roles.map((role, index) => (
                   <span
                     key={role}
-                    className={`absolute left-0 transition-all duration-500 ${
+                    aria-hidden={index !== currentRoleIndex}
+                    className={`absolute left-0 transition-all duration-500 motion-reduce:transition-none ${
                       index === currentRoleIndex
                         ? "translate-y-0 opacity-100"
                         : index < currentRoleIndex
@@ -49,14 +50,14 @@ export function HeroView({ content, currentRoleIndex }: HeroViewProps) {
               </p>
             </div>
 
-            <p className="mt-8 max-w-2xl text-base leading-8 text-zinc-400 sm:text-lg">
+            <p className="mt-7 max-w-[62ch] text-base leading-7 text-site-muted sm:text-lg sm:leading-8">
               {content.description}
             </p>
 
             <div className="mt-10 flex flex-wrap items-center gap-3">
               <Link
                 href="#experiences"
-                className="group inline-flex h-12 items-center justify-center bg-cyan-300 px-6 text-sm font-semibold text-zinc-950 transition-colors hover:bg-white"
+                className="group inline-flex min-h-12 items-center justify-center bg-site-accent px-6 text-sm font-semibold text-site-background transition-colors hover:bg-white"
               >
                 Explore my work
                 <ArrowDownRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:translate-y-0.5" />
@@ -90,38 +91,38 @@ export function HeroView({ content, currentRoleIndex }: HeroViewProps) {
             </div>
           </div>
 
-          <aside className="border-l border-white/15 pl-6 lg:mb-2">
-            <div className="space-y-8">
+          <aside className="border-l border-white/20 pl-6 lg:mb-2">
+            <div className="grid gap-6 sm:grid-cols-3 lg:grid-cols-1 lg:gap-8">
               <div>
-                <p className="mb-2 text-xs tracking-[0.15em] text-zinc-500 uppercase">
+                <p className="mb-2 text-xs tracking-[0.12em] text-site-subtle uppercase">
                   Experience
                 </p>
-                <p className="text-3xl font-semibold text-white">
+                <p className="text-3xl font-semibold text-site-text">
                   {content.yearsExperience}+
                 </p>
-                <p className="mt-1 text-sm text-zinc-400">
+                <p className="mt-1 text-sm text-site-subtle">
                   years shipping products
                 </p>
               </div>
               <div>
-                <p className="mb-2 text-xs tracking-[0.15em] text-zinc-500 uppercase">
+                <p className="mb-2 text-xs tracking-[0.12em] text-site-subtle uppercase">
                   Currently
                 </p>
                 <a
                   href={content.currentCompanyUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group inline-flex items-center gap-2 text-sm font-semibold text-white hover:text-cyan-300"
+                  className="group inline-flex items-center gap-2 text-sm font-semibold text-site-text hover:text-site-accent"
                 >
                   {content.currentCompany}
                   <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
                 </a>
               </div>
               <div>
-                <p className="mb-2 text-xs tracking-[0.15em] text-zinc-500 uppercase">
+                <p className="mb-2 text-xs tracking-[0.12em] text-site-subtle uppercase">
                   Based in
                 </p>
-                <p className="text-sm font-medium text-zinc-200">Germany</p>
+                <p className="text-sm font-medium text-site-text">Germany</p>
               </div>
             </div>
           </aside>
@@ -146,7 +147,7 @@ function SocialButton({
     <Button
       variant="ghost"
       size="icon"
-      className="h-12 w-12 rounded-none border border-white/15 text-zinc-300 transition-colors hover:border-white/30 hover:bg-white/5 hover:text-white"
+      className="h-12 w-12 rounded-none border border-white/15 text-site-muted transition-colors hover:border-white/30 hover:bg-white/5 hover:text-site-text"
       asChild
     >
       <a

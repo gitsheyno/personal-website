@@ -9,7 +9,6 @@ export type ProjectFilter = "all" | ProjectCategory;
 
 export interface PortfolioItem {
   id: string;
-  color: string;
   img: string;
   description: {
     name: string;
