@@ -60,6 +60,18 @@ export const portfolioData: PortfolioItem[] = [
     category: "web-app",
   },
   {
+    id: "druckhaus-management-panel",
+    description: {
+      name: "Druckhaus Management Panel (Internal)",
+      title: "Internal operations dashboard for orders, fulfillment, and staff",
+    },
+    img: "/druckhaus-management-panel.webp",
+    imageAlt: "Anonymized illustration of the Druckhaus management dashboard with navigation, metrics, and an orders table",
+    technologies: ["React", "TypeScript", "Vite", "Tailwind CSS", "TanStack Query"],
+    links: {},
+    category: "web-app",
+  },
+  {
     id: "knime",
     description: {
       name: "KNIME",

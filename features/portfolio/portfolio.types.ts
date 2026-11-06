@@ -10,6 +10,7 @@ export type ProjectFilter = "all" | ProjectCategory;
 export interface PortfolioItem {
   id: string;
   img: string;
+  imageAlt?: string;
   description: {
     name: string;
     title: string;

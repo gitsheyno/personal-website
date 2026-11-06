@@ -14,7 +14,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
         <div className="relative aspect-[16/10] w-full overflow-hidden bg-zinc-900">
           <Image
             src={project.img}
-            alt={project.description.name}
+            alt={project.imageAlt ?? project.description.name}
             fill
             className="object-cover opacity-90 transition-all duration-500 group-hover:scale-[1.025] group-hover:opacity-100 motion-reduce:transition-none"
             sizes="(max-width: 768px) calc(100vw - 2.5rem), 560px"
@@ -67,6 +67,11 @@ export function ProjectCard({ project }: ProjectCardProps) {
                 <span className="sr-only"> of {project.description.name}</span>
               </Link>
             )}
+            {!project.links.demo && !project.links.source && (
+              <span className="inline-flex min-h-11 items-center text-xs font-semibold tracking-wide text-site-subtle uppercase">
+                Preview unavailable
+              </span>
+            )}
             {project.links.source ? (
               <Link
                 href={project.links.source}
@@ -80,7 +85,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
               </Link>
             ) : (
               <span className="inline-flex min-h-11 items-center text-xs font-semibold tracking-wide text-site-subtle uppercase">
-                Private Repo
+                Source private
               </span>
             )}
           </div>
